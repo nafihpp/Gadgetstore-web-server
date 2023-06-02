@@ -6,7 +6,6 @@ import { Product } from './models/models';
 import { ProductCard } from './components/ProductCard';
 import { CartReducer } from './context/CartContext/CartReducer';
 import { CartContext } from './context/CartContext/CartContext';
-import { ACTIONS } from './context/CartContext/ACTIONS';
 
 
 function App() {
@@ -23,8 +22,8 @@ function App() {
 
   const { cart } = React.useContext(CartContext);
 
-
-  // const [state, dispatch] = React.useReducer(CartReducer, cart);
+  //error here
+  const [state, dispatch] = React.useReducer(CartReducer, cart);
 
   // console.log(state, '==curent');
   // dispatch({ action: ACTIONS.ADD_TO_CART, payload: products })
