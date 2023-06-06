@@ -11,7 +11,6 @@ import { Header } from './components/Header';
 function App() {
   const { products, productLoading } = React.useContext(ProductContext);
   const { cart } = React.useContext(CartContext);
-  console.log(cart, '==cart')
   const HeadingRef = React.useRef<HTMLHeadingElement | null>(null);
 
   if (productLoading) {
@@ -32,8 +31,8 @@ function App() {
         <div>
           <h1>Cart</h1>
           <div className='card-container'>
-            {cart?.length !== 0 && cart?.map((product) => {
-              return <CartCard product={product} key={product.id} />
+            {cart?.length !== 0 && cart?.map((cartproduct) => {
+              return <CartCard cartproduct={cartproduct} key={cartproduct?.id} />
             })}
           </div>
         </div>
