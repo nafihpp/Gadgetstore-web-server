@@ -1,14 +1,13 @@
 .card {
-    border: 1px solid #000;
     border-radius: 4px;
-    width: 200px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 10px;
-    height: 277px;
-    max-height: 277px;
-    min-height: 277px;
+
+    height: 188px;
+    max-height: 170px;
+    min-height: 211px;
+    background: #fff;
 }
 .card .card-title {
     white-space: nowrap;
@@ -26,6 +25,7 @@
     padding: 10px;
     margin: 10px 0;
     cursor: pointer;
+    border-radius: 4px;
 }
 .card .quantity {
     display: flex;
@@ -34,6 +34,7 @@
     color: #fff;
     width: 72px;
     justify-content: center;
+    border-radius: 4px;
 }
 
 .card .decrease {
@@ -45,4 +46,13 @@
     font-size: 30px;
     cursor: pointer;
     margin-left: 10px;
+}
+.card .old-price {
+    text-decoration: line-through;
+    margin-right: 7px;
+}
+.card .discount-percentage {
+    color: #38ae04;
+    font-weight: bold;
+    text-transform: uppercase;
 }

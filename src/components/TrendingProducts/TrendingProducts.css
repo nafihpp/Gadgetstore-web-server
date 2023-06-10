@@ -1,0 +1,38 @@
+.trending-container {
+    background: #f1f4fd;
+    padding-top: 10px;
+}
+.swiper-navigation-prev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+.swiper-navigation-prev button {
+    background: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    cursor: pointer;
+    padding: 5px;
+}
+.swiper-navigation-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+.swiper-navigation-next button {
+    padding: 5px;
+    cursor: pointer;
+    background: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+/* responsive */
+.swiper-container {
+    width: 480px;
+}

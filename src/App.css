@@ -1,9 +1,33 @@
 .card-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
 }
 .wrapper {
     width: 90%;
     margin: 0 auto;
+}
+.heading-products {
+    text-align: end;
+    border-bottom: 3px solid #fbee4f;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #ffd800;
+}
+
+.bottom-navigation-container {
+}
+@media screen and (min-width: 640px) {
+    .swiper-container {
+        width: 640px;
+    }
+}
+@media screen and (max-width: 640px) {
+    .bottom-navigation-container {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .swiper-container {
+        width: 768px;
+    }
 }

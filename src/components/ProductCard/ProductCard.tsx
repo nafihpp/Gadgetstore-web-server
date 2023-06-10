@@ -1,41 +1,35 @@
+import { ACTIONS } from "../../context/CartContext/ACTIONS"
 import { CartContext } from "../../context/CartContext/CartContext"
-import { Product } from "../../models/models"
+import { CartReducer } from "../../context/CartContext/CartReducer"
+import { Product, gadgetProduct } from "../../models/models"
 import "./ProductCard.css"
 import React from "react"
 
 interface CurrentProduct {
-    product: Product
+    product: gadgetProduct
 }
 
 export const ProductCard = ({ product }: CurrentProduct) => {
     const { cart, setCart } = React.useContext(CartContext);
-    const [count, setCount] = React.useState<number>(1);
-    const increment = () => {
-        setCount((count) => count + 1);
-    }
-    const decrement = () => {
-        if (count > 1) {
-            setCount((count) => count - 1);
-        }
+    console.log(cart, '==current ....')
+    const [state, dispatch] = React.useReducer(CartReducer, cart);
+
+
+    const discountedRate = (prouctPrice: number, discountPercentage: number) => {
+        let OriginalPrice = prouctPrice * discountPercentage;
+        return OriginalPrice.toFixed(0);
+
     }
 
-    const adddToCart = (product: Product) => {
-        if (product) {
-            let cartProduct = {
-                title: product.title,
-                quantity: count,
-                price: product.price,
-                image: product.image
-            }
-            setCart([...cart, cartProduct]);
-        }
-    }
+    console.log(state, '===cureent state')
     return (
         <div className="card">
-            <img src={product?.image} alt="image" width="100" height="100" style={{ objectFit: "contain" }} />
+            <img src={product?.thumbnail} alt="image" style={{ objectFit: "contain", width: "100%", display: "block", minHeight: "100px", maxHeight: "100px", height: "100px" }} />
             <p className="card-title">{product?.title}</p>
-            <div className="quantity"><span className="decrease" onClick={decrement}>-</span>{<span>{count}</span>}<span className="increase" onClick={increment}>+</span></div>
-            <button className="cart-button" onClick={() => adddToCart(product)}>Add to cart</button>
+            <div className="price-container" onClick={() => {
+                dispatch({ type: ACTIONS.ADD_TO_CART, payload: product })
+            }}><span className="currency">AED </span><strong className="amount">{product?.price}</strong></div>
+            <div className="discount-container"><span className="old-price">{discountedRate(product?.price, product?.discountPercentage)}</span><span className="discount-percentage">{product?.discountPercentage} % OFF</span></div>
         </div>
     )
 }
