@@ -7,6 +7,7 @@ import "./TrendingProducts.css"
 import "swiper/css";
 import "swiper/swiper-bundle.css";
 
+
 export const TrendingProducts = () => {
     const swiperRef = useRef(null) as any;
     const HeadingRef = React.useRef<HTMLHeadingElement | null>(null);

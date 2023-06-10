@@ -1,4 +1,3 @@
-
 import './App.css'
 // import { ProductContext } from './context/ProductContext/ProductContext'
 import { Header } from './components/Header';
@@ -8,8 +7,6 @@ import { Route, Routes } from 'react-router-dom'
 import { Cart } from './pages/Cart';
 import { ProductDetails } from './pages/ProductDetails';
 import { Footer } from './components/Footer/Footer';
-
-
 
 function App() {
   // const { products, productLoading } = React.useContext(ProductContext);
@@ -34,9 +31,4 @@ function App() {
 export default App
 
 
-{/* <h1>Cart</h1>
-      <div className='card-container'>
-        {cart?.length !== 0 && cart?.map((cartproduct) => {
-          return <CartCard cartproduct={cartproduct} key={cartproduct?.id} />
-        })}
-      </div> */}
+

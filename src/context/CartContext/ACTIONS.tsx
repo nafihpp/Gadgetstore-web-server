@@ -20,7 +20,6 @@ export interface IncrementItemAction {
     type: ACTIONS.INCREMENT;
     payload: string;
 }
-
 export interface DecrementItemAction {
     type: ACTIONS.DECREMENT;
     payload: string;

@@ -13,7 +13,6 @@ export interface Product {
         rate: number;
     }
 }
-
 export interface gadgetProduct {
     brand: string;
     category: string;
