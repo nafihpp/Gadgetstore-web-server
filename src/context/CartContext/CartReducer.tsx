@@ -5,7 +5,7 @@ import React from "react"
 type CartAction = AddItemAction | RemoveItemAction | IncrementItemAction | DecrementItemAction;
 
 export const CartReducer = (state: any, action: CartAction) => {
-    const { cart, setCart } = React.useContext(CartContext);
+    const { cart } = React.useContext(CartContext);
     const { type, payload } = action;
     switch (type) {
         case ACTIONS.ADD_TO_CART:

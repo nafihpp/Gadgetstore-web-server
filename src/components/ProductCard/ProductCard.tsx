@@ -1,7 +1,7 @@
 import { ACTIONS } from "../../context/CartContext/ACTIONS"
 import { CartContext } from "../../context/CartContext/CartContext"
 import { CartReducer } from "../../context/CartContext/CartReducer"
-import { Product, gadgetProduct } from "../../models/models"
+import { gadgetProduct } from "../../models/models"
 import "./ProductCard.css"
 import React from "react"
 
