@@ -1,0 +1,33 @@
+footer {
+    background: #f7f7fa;
+    width: 100%;
+    min-height: 150px;
+    color: #757575;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 0;
+    padding-bottom: 70px;
+}
+footer .top {
+    margin: 15px 0 20px 0;
+}
+footer .middle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer .middle p {
+    margin-top: 10px;
+}
+footer .middle .middle-icons span {
+    margin-right: 10px;
+    cursor: pointer;
+}
+.bottom {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+footer .bottom span {
+    margin-right: 5px;
+}

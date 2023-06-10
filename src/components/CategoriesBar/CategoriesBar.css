@@ -1,0 +1,27 @@
+.categories-container {
+    display: flex;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.categories-container .wrapper-flex {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+}
+.categories-container .category {
+    width: 160px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+}
+.categories-container .category p {
+    margin: 4px 0 5px 0;
+}

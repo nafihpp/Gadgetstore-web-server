@@ -76,6 +76,7 @@ export const Header = () => {
                             alt={Profile}
                             sx={{ width: 30, height: 30 }}
                         />
+                        <p>Login/Signup</p>
                     </a>
                     <Link className="cart-container" to="/cart">
 
@@ -96,28 +97,28 @@ export const Header = () => {
                     </button>
                     <div className={`menu ${isOpen && "open"}`}>
                         <div>
-                            <a
+                            <Link to="/"
 
                                 className="link hamburger-link "
                                 style={{ marginTop: "10px" }}
+                                onClick={toggleMenu}
                             >
                                 Home
-                            </a>
+                            </Link>
                         </div>
-
-                        <div style={{ position: "absolute", bottom: "50px" }}>
-                            <a
+                        <div>
+                            <Link
 
                                 className="link hamburger-link"
-
+                                to="/cart"
+                                onClick={toggleMenu}
                             >
-                                About me
-                            </a>
+                                Cart
+                            </Link>
                         </div>
                     </div>
                     <div
-                        className={`sidebar ${isOpen && "open"}`}
-
+                        className={`sidebar ${isOpen && "open"}`} onClick={toggleMenu}
                     ></div>
                 </div>
             </div>

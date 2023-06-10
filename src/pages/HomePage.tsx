@@ -1,8 +1,12 @@
-
+import React from "react"
+import { CategoriesBar } from '../components/CategoriesBar/CategoriesBar'
 import { TrendingProducts } from '../components/TrendingProducts/TrendingProducts'
 
 export const HomePage = () => {
     return (
-        <TrendingProducts />
+        <React.Fragment>
+            <CategoriesBar />
+            <TrendingProducts />
+        </React.Fragment>
     )
 }

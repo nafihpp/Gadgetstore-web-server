@@ -7,6 +7,7 @@ import { HomePage } from './pages/HomePage';
 import { Route, Routes } from 'react-router-dom'
 import { Cart } from './pages/Cart';
 import { ProductDetails } from './pages/ProductDetails';
+import { Footer } from './components/Footer/Footer';
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<h1>404 Page not Found</h1>} />
       </Routes>
+      <Footer />
       <div className='bottom-navigation-container'>
         <BottomNavigationBar />
       </div>
