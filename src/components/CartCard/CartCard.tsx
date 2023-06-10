@@ -1,3 +1,4 @@
+import React from "react";
 import "./CartCard.css"
 interface CartItemProps {
     title: string;
@@ -11,20 +12,20 @@ interface currentItem {
 }
 
 export const CartCard = ({ cartproduct }: currentItem) => {
-    // const [count, setCount] = useState<number>(1);
-    // const increment = () => {
-    //     setCount((count) => count + 1);
-    // }
-    // const decrement = () => {
-    //     if (count > 1) {
-    //         setCount((count) => count - 1);
-    //     }
-    // }
+    const [count, setCount] = React.useState<number>(1);
+    const increment = () => {
+        setCount((count) => count + 1);
+    }
+    const decrement = () => {
+        if (count > 1) {
+            setCount((count) => count - 1);
+        }
+    }
     return (
         <div className="cart-card">
             <img src={cartproduct?.thumbnail} alt="image" width="100" height="100" style={{ objectFit: "contain" }} />
             <p className="cart-card-title">{cartproduct?.title}</p>
-            <div className="cart-quantity"><span className="decrease-cart" >-</span>{<span>{cartproduct?.quantity}</span>}<span className="increase-cart" >+</span></div>
+            <div className="cart-quantity"><span className="decrease-cart" onClick={decrement} >-</span>{<span>{cartproduct?.quantity}</span>}<span className="increase-cart" onClick={increment}>+</span></div>
             <button className="cart-remove-button">Remove from cart</button>
             {/* <div className="quantity"><span className="decrease" onClick={decrement}>-</span>{<span>{count}</span>}<span className="increase" onClick={increment}>+</span></div>
             <button className="cart-button" >Add to cart</button> */}

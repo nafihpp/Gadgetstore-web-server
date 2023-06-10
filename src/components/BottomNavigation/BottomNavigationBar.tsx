@@ -10,7 +10,7 @@ import { BottomNavigationContext } from "../../context/BottomNavigationContext/B
 export const BottomNavigationBar = () => {
     const { cart } = useContext(CartContext);
     const navigate = useNavigate();
-    const { navigationValue, setNavigationValue } = React.useContext(BottomNavigationContext)
+    const { navigationValue, setNavigationValue } = React.useContext(BottomNavigationContext);
 
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
         console.log(event);

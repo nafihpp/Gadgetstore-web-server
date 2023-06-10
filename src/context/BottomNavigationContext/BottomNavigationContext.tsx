@@ -2,7 +2,7 @@ import React from 'react'
 import { children } from "../../models/models";
 interface INavigationContext {
     navigationValue: string;
-    setNavigationValue: React.Dispatch<React.SetStateAction<string>>;
+    setNavigationValue: React.Dispatch<React.SetStateAction<string>> | undefined;
 }
 export const BottomNavigationContext = React.createContext<Partial<INavigationContext>>({});
 

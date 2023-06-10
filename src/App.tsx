@@ -14,6 +14,7 @@ import { Favourites } from './pages/Favorites';
 import { ProtectedRoutes } from './components/Routes/ProtectedRoutes';
 import { ProtectedAfterLogin } from './components/Routes/ProtectedAfterLogin';
 import { Profile } from './pages/Profile';
+import { CategoryFiltering } from './pages/CategoryFiltering';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products/:id" element={<ProductDetails />} />
+        <Route path="/category" element={<CategoryFiltering />} />
         <Route path="*" element={<NotFound404 />} />
         <Route element={<ProtectedRoutes />}>
           <Route path="/cart" element={<Cart />} />

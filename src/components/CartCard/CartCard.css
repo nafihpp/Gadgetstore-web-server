@@ -1,14 +1,12 @@
-/* .card {
+.cart-card {
+    border: 1px solid;
     border-radius: 4px;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    padding: 10px;
-    height: 277px;
-    max-height: 277px;
-    min-height: 277px;
+    justify-content: space-between;
+    padding: 0 10px;
 }
-.card .card-title {
+.cart-card .card-title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -17,34 +15,18 @@
     font-size: 20px;
     margin: 10px 0;
 }
-.card .cart-button {
-    border: none;
-    background: #000;
-    color: #fff;
-    padding: 10px;
-    margin: 10px 0;
-    cursor: pointer;
-}
 
-
-.card .decrease {
+.cart-card .decrease-cart {
     font-size: 30px;
     cursor: pointer;
     margin-right: 10px;
 }
-.card .increase {
+.cart-card .increase-cart {
     font-size: 30px;
     cursor: pointer;
     margin-left: 10px;
 }
-@media all and (maxwidth: 480px) {
-} */
-.cart-card {
-    border: 1px solid;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-}
+
 .cart-card .cart-quantity {
     display: flex;
     background: black;
@@ -52,4 +34,15 @@
     color: #fff;
     width: 72px;
     justify-content: center;
+    border-radius: 4px;
+    margin: 0 10px;
+}
+.cart-card .cart-remove-button {
+    border: none;
+    background: rgb(255, 18, 18);
+    color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 4px;
 }
