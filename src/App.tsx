@@ -29,6 +29,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/favorites" element={<Favourites />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/orders" element={<Profile />} />
         </Route>
         <Route element={<ProtectedAfterLogin />}>
           <Route path='/login' element={<LoginPage />} />
