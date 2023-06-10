@@ -1,13 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./LoginPage.css";
-import { SyntheticEvent, useContext, useState } from "react";
-import { AuthContext } from "../../context/AuthContext/AuthContext";
 
 export const LoginPage = () => {
-    const navigate = useNavigate();
-    const { auth, setAuth } = useContext(AuthContext);
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    // React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+    // const navigate = useNavigate();
+    // const { auth, setAuth } = useContext(AuthContext);
+    // const [email, setEmail] = useState("");
+    // const [password, setPassword] = useState("");
 
     const handleEmail = () => {
         // setEmail(e?.target?.value);
@@ -27,9 +26,10 @@ export const LoginPage = () => {
         // }
     };
     return (
-        <div className="wrapper">
-            <div className={`login-container`}>
-                <div className="top">
+
+        <div className="login-container">
+            <div className="top-container">
+                <div className="wrapper">
                     <h1>Sign In</h1>
                     <form autoComplete="off" className="login-form">
                         <input placeholder="Email" onChange={handleEmail} />
@@ -41,7 +41,7 @@ export const LoginPage = () => {
                         <Link
                             to="/forgot-password"
                             className="forgot-password"
-
+                            style={{ color: "black" }}
                         >
                             Forgot Pasword?
                         </Link>
@@ -53,6 +53,7 @@ export const LoginPage = () => {
                 </p>
             </div>
         </div>
+
 
     );
 };

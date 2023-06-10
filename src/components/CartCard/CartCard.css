@@ -25,14 +25,7 @@
     margin: 10px 0;
     cursor: pointer;
 }
-.card .quantity {
-    display: flex;
-    background: black;
-    align-items: center;
-    color: #fff;
-    width: 72px;
-    justify-content: center;
-}
+
 
 .card .decrease {
     font-size: 30px;
@@ -46,3 +39,17 @@
 }
 @media all and (maxwidth: 480px) {
 } */
+.cart-card {
+    border: 1px solid;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+.cart-card .cart-quantity {
+    display: flex;
+    background: black;
+    align-items: center;
+    color: #fff;
+    width: 72px;
+    justify-content: center;
+}

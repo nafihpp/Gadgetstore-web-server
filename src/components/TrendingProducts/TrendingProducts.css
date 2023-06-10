@@ -1,7 +1,8 @@
-.trending-container {
+.trending-card-container {
     background: #f1f4fd;
     padding-top: 10px;
     padding-bottom: 48px;
+    display: flex;
 }
 .swiper-navigation-prev {
     display: flex;

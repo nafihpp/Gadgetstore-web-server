@@ -6,9 +6,11 @@ import { CartContext } from "../../context/CartContext/CartContext";
 import Profile from "../../assets/profile.png";
 import { Link } from "react-router-dom"
 import { BottomNavigationContext } from "../../context/BottomNavigationContext/BottomNavigationContext";
+import { AuthContext } from "../../context/AuthContext/AuthContext";
 
 export const Header = () => {
     const { cart } = useContext(CartContext);
+    const { auth } = useContext(AuthContext)
     const { setNavigationValue } = React.useContext(BottomNavigationContext);
     const [searchQuery, setSearchQuery] = React.useState("")
     const [isOpen, setOpen] = React.useState<boolean>(false);
@@ -20,14 +22,13 @@ export const Header = () => {
     const handleNavigation = (value: string) => {
         setNavigationValue(value);
     }
-
     const searchHandle = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {
         setSearchQuery(e?.target?.value)
     }
     return (
         <header className="header-container">
             <div className="wrapper">
-                <Link className="logo" to="/">
+                <Link className="logo" to="/" onClick={() => handleNavigation("home")}>
                     <img
                         src="https://f.nooncdn.com/s/app/com/noon/design-system/logos/noon-logo-en.svg"
                         alt="logo"
@@ -77,12 +78,12 @@ export const Header = () => {
                     </div>
                 </div>
                 <div className="right-container">
-                    <Link className="profile-container" to="/login">
+                    <Link className="profile-container" to="/profile" onClick={() => handleNavigation("account")}>
                         <Avatar
                             alt={Profile}
                             sx={{ width: 30, height: 30 }}
                         />
-                        <p>Login/Signup</p>
+                        <p>{!auth ? "Login/Signup" : ""}</p>
                     </Link>
                     <Link className="cart-container" to="/cart" onClick={() => handleNavigation("cart")}>
 

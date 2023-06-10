@@ -1,45 +1,48 @@
 .login-container {
-    background: #000;
     padding: 10px;
     border-radius: 4px;
-    h1 {
-        text-align: center;
-    }
-    input {
-        width: 95%;
-        margin-top: 13px;
-        margin-bottom: 11px;
-        padding: 7px;
-        outline: none;
-        background: #333333;
-        border: none;
-        height: 50px;
-        border-radius: 4px;
-        color: #fff;
-    }
-    button {
-        width: 95%;
-        display: block;
-        padding: 13px 10px;
-        border: none;
-        background: #e50914;
-        color: #fff;
-        border-radius: 4px;
-        font-size: 13px;
-        cursor: pointer;
-    }
-    a {
-        text-decoration: none;
-    }
-    .forgot-password {
-        text-align: right;
-        display: block;
-        margin: 12px 14px 0 15px;
-        color: #fff;
-    }
-    p.bottom-link {
-        margin-top: 20px;
-        text-align: center;
-        font-size: 13px;
-    }
+    width: 290px;
+}
+.login-container .top-container {
+    width: 100%;
+}
+.login-container .top-container button {
+    background: darkgoldenrod;
+    width: 95%;
+    display: block;
+    padding: 13px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.login-container h1 {
+    text-align: center;
+}
+.login-container input {
+    width: 95%;
+    margin-top: 13px;
+    margin-bottom: 11px;
+    padding: 7px;
+    outline: none;
+    border: 1px solid;
+    height: 50px;
+    border-radius: 4px;
+    color: #000;
+}
+
+.login-container a {
+    text-decoration: none;
+}
+.login-container .forgot-password {
+    text-align: right;
+    display: block;
+    margin: 12px 14px 0 15px;
+    color: #fff;
+}
+.login-container p.bottom-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 13px;
 }

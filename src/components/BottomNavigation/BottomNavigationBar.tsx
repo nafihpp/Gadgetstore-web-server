@@ -22,10 +22,13 @@ export const BottomNavigationBar = () => {
             navigate("/")
         }
         else if (navigationValue === "favorites") {
-            navigate("/favourites")
+            navigate("/favorites")
         }
         else if (navigationValue === "cart") {
             navigate("/cart")
+        }
+        else if (navigationValue === "account") {
+            navigate("/profile")
         }
 
     }, [navigationValue])

@@ -2,45 +2,45 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-}
-.login-container {
+
     width: 350px;
 }
-.login-container h1 {
+.signup-container .top-signup-container {
+    width: 100%;
+}
+.signup-container h1 {
     text-align: center;
 }
-.login-container input {
+.signup-container input {
     width: 95%;
     margin-top: 13px;
     margin-bottom: 11px;
     padding: 7px;
     outline: none;
-    background: #333333;
-    border: none;
+    border: 1px solid;
     height: 50px;
     border-radius: 4px;
 }
-.login-container button {
+.signup-container button {
     width: 95%;
     display: block;
     padding: 13px 10px;
     border: none;
-    background: #e50914;
+    background: darkgoldenrod;
     color: #fff;
     border-radius: 4px;
     font-size: 13px;
 }
-.login-container a {
+.signup-container a {
     text-decoration: none;
 }
-.login-container .forgot-password {
+.signup-container .forgot-password {
     text-align: right;
     display: block;
     margin: 12px 14px 0 15px;
     color: #fff;
 }
-.login-container p {
+.signup-container p {
     margin-top: 20px;
     text-align: center;
     font-size: 13px;

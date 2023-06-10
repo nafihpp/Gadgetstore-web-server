@@ -21,11 +21,11 @@ export const CartCard = ({ cartproduct }: currentItem) => {
     //     }
     // }
     return (
-        <div className="card">
+        <div className="cart-card">
             <img src={cartproduct?.thumbnail} alt="image" width="100" height="100" style={{ objectFit: "contain" }} />
-            <p className="card-title">{cartproduct?.title}</p>
-            <div className="quantity"><span className="decrease" >-</span>{<span>{cartproduct?.quantity}</span>}<span className="increase" >+</span></div>
-            <button className="cart-button">Remove from cart</button>
+            <p className="cart-card-title">{cartproduct?.title}</p>
+            <div className="cart-quantity"><span className="decrease-cart" >-</span>{<span>{cartproduct?.quantity}</span>}<span className="increase-cart" >+</span></div>
+            <button className="cart-remove-button">Remove from cart</button>
             {/* <div className="quantity"><span className="decrease" onClick={decrement}>-</span>{<span>{count}</span>}<span className="increase" onClick={increment}>+</span></div>
             <button className="cart-button" >Add to cart</button> */}
         </div>
