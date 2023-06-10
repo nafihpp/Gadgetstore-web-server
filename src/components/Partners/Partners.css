@@ -1,0 +1,17 @@
+.partner-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+.partner-container .trusted-img-container {
+    width: 150px;
+    border: 1px solid rgba(0, 22, 36, 0.08);
+    box-sizing: border-box;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.partner-container .trusted-img-container img {
+}

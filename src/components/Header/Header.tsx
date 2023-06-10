@@ -5,9 +5,11 @@ import React, { useContext } from "react"
 import { CartContext } from "../../context/CartContext/CartContext";
 import Profile from "../../assets/profile.png";
 import { Link } from "react-router-dom"
+import { BottomNavigationContext } from "../../context/BottomNavigationContext/BottomNavigationContext";
 
 export const Header = () => {
     const { cart } = useContext(CartContext);
+    const { setNavigationValue } = React.useContext(BottomNavigationContext);
     const [searchQuery, setSearchQuery] = React.useState("")
     const [isOpen, setOpen] = React.useState<boolean>(false);
 
@@ -15,13 +17,17 @@ export const Header = () => {
         setOpen(!isOpen);
     };
 
+    const handleNavigation = (value: string) => {
+        setNavigationValue(value);
+    }
+
     const searchHandle = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {
         setSearchQuery(e?.target?.value)
     }
     return (
         <header className="header-container">
             <div className="wrapper">
-                <a className="logo" >
+                <Link className="logo" to="/">
                     <img
                         src="https://f.nooncdn.com/s/app/com/noon/design-system/logos/noon-logo-en.svg"
                         alt="logo"
@@ -29,7 +35,7 @@ export const Header = () => {
                         height="100"
                         style={{ objectFit: "contain" }}
                     />
-                </a>
+                </Link>
                 <div className="middle-container">
                     <input placeholder="search here" onChange={searchHandle} value={searchQuery} />
                     <div className="search-icon-container">
@@ -71,14 +77,14 @@ export const Header = () => {
                     </div>
                 </div>
                 <div className="right-container">
-                    <a className="profile-container">
+                    <Link className="profile-container" to="/login">
                         <Avatar
                             alt={Profile}
                             sx={{ width: 30, height: 30 }}
                         />
                         <p>Login/Signup</p>
-                    </a>
-                    <Link className="cart-container" to="/cart">
+                    </Link>
+                    <Link className="cart-container" to="/cart" onClick={() => handleNavigation("cart")}>
 
                         <Badge badgeContent={cart?.length} color="success" anchorOrigin={{
                             vertical: 'bottom',
@@ -101,7 +107,11 @@ export const Header = () => {
 
                                 className="link hamburger-link "
                                 style={{ marginTop: "10px" }}
-                                onClick={toggleMenu}
+                                onClick={() => {
+                                    toggleMenu()
+                                    handleNavigation("home")
+                                }}
+
                             >
                                 Home
                             </Link>
@@ -111,7 +121,10 @@ export const Header = () => {
 
                                 className="link hamburger-link"
                                 to="/cart"
-                                onClick={toggleMenu}
+                                onClick={() => {
+                                    toggleMenu()
+                                    handleNavigation("cart")
+                                }}
                             >
                                 Cart
                             </Link>

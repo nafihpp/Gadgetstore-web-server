@@ -5,31 +5,32 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { CartContext } from '../../context/CartContext/CartContext';
 import { useNavigate } from 'react-router-dom';
 import Badge from '@mui/material/Badge/Badge';
+import { BottomNavigationContext } from "../../context/BottomNavigationContext/BottomNavigationContext"
 
 export const BottomNavigationBar = () => {
     const { cart } = useContext(CartContext);
     const navigate = useNavigate();
-    const [value, setValue] = React.useState('home');
+    const { navigationValue, setNavigationValue } = React.useContext(BottomNavigationContext)
 
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
         console.log(event);
-        setValue(newValue);
+        setNavigationValue(newValue);
     };
 
     React.useEffect(() => {
-        if (value === "home") {
+        if (navigationValue === "home") {
             navigate("/")
         }
-        else if (value === "favorites") {
+        else if (navigationValue === "favorites") {
             navigate("/favourites")
         }
-        else if (value === "cart") {
+        else if (navigationValue === "cart") {
             navigate("/cart")
         }
 
-    }, [value])
+    }, [navigationValue])
     return (
-        <BottomNavigation showLabels value={value} onChange={handleChange} sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}>
+        <BottomNavigation showLabels value={navigationValue} onChange={handleChange} sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}>
             <BottomNavigationAction
                 label="Home"
                 value="home"

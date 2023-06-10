@@ -47,6 +47,9 @@
     cursor: pointer;
     margin-left: 10px;
 }
+.card .price-container {
+    margin-bottom: 9px;
+}
 .card .old-price {
     text-decoration: line-through;
     margin-right: 7px;

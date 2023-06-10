@@ -5,16 +5,22 @@ import './index.css'
 import { ProductProvider } from './context/ProductContext/ProductContext.tsx'
 import { CartProvider } from './context/CartContext/CartContext.tsx'
 import { BrowserRouter } from 'react-router-dom'
+import { BottomNavigationProvider } from './context/BottomNavigationContext/BottomNavigationContext.tsx'
+import { AuthProvider } from './context/AuthContext/AuthContext.tsx'
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ProductProvider>
-      <CartProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </CartProvider>
+      <AuthProvider>
+        <CartProvider>
+          <BottomNavigationProvider>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </BottomNavigationProvider>
+        </CartProvider>
+      </AuthProvider>
     </ProductProvider>
   </React.StrictMode>,
 )

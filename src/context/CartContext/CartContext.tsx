@@ -1,6 +1,6 @@
 
 import React, { createContext, useState } from "react";
-import { children, gadgetProduct } from "../../models/models";
+import { children } from "../../models/models";
 
 interface CartItemProps {
     id: number;

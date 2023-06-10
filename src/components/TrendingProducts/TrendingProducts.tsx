@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { SyntheticEvent, useRef } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import products from "../../dummy.json";
 import { gadgetProduct } from '../../models/models';
@@ -12,13 +12,15 @@ export const TrendingProducts = () => {
     const swiperRef = useRef(null) as any;
     const HeadingRef = React.useRef<HTMLHeadingElement | null>(null);
 
-    const goNext = () => {
+    const goNext = (e: SyntheticEvent) => {
+        e.preventDefault();
         if (swiperRef.current !== null) {
             swiperRef?.current?.swiper?.slideNext();
         }
     };
 
-    const goPrev = () => {
+    const goPrev = (e: SyntheticEvent) => {
+        e.preventDefault();
         if (swiperRef.current !== null) {
             swiperRef?.current?.swiper?.slidePrev();
         }

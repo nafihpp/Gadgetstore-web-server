@@ -11,17 +11,14 @@ interface CurrentProduct {
 
 export const ProductCard = ({ product }: CurrentProduct) => {
     const { cart } = React.useContext(CartContext);
-    console.log(cart, '==current ....')
     const [state, dispatch] = React.useReducer(CartReducer, cart);
-
 
     const discountedRate = (prouctPrice: number, discountPercentage: number) => {
         let OriginalPrice = prouctPrice * discountPercentage;
         return OriginalPrice.toFixed(0);
 
     }
-
-    console.log(state, '===cureent state')
+    console.log(state, '==currentCart')
     return (
         <div className="card">
             <img src={product?.thumbnail} alt="image" style={{ objectFit: "contain", width: "100%", display: "block", minHeight: "100px", maxHeight: "100px", height: "100px" }} />

@@ -1,5 +1,5 @@
-import { CartCard } from "../components/CartCard"
-import { CartContext } from "../context/CartContext/CartContext"
+import { CartCard } from "../../components/CartCard"
+import { CartContext } from "../../context/CartContext/CartContext"
 import React from 'react'
 
 export const Cart = () => {

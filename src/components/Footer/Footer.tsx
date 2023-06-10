@@ -1,7 +1,3 @@
-import insta from "../../assets/icons/insta.png";
-import facebook from "../../assets/icons/facebook.png";
-import twitter from "../../assets/icons/twitter.png";
-import youtube from "../../assets/icons/youtube.png";
 import "./Footer.css"
 
 export const Footer = () => {
@@ -9,7 +5,7 @@ export const Footer = () => {
         <footer className="footer-container">
             <div className="wrapper">
                 <div className="top">
-                    <p>Support? all 859390802</p>
+                    <p>Support? Please Call +91 859390802</p>
                 </div>
                 <div className="middle">
                     <div className="middle-first">
@@ -24,20 +20,7 @@ export const Footer = () => {
                         <p>Terms of Use</p>
                         <p>Privacy</p>
                     </div>
-                    <div className={`middle-icons`}>
-                        <span className="fb">
-                            <img src={facebook} alt="fb" />
-                        </span>
-                        <span className="insta">
-                            <img src={insta} alt="insta" />
-                        </span>
-                        <span className="twitter">
-                            <img src={twitter} alt="twitter" />
-                        </span>
-                        <span className="youtube">
-                            <img src={youtube} alt="youtube" />
-                        </span>
-                    </div>
+
                 </div>
                 <div className="bottom">
                     <p>
