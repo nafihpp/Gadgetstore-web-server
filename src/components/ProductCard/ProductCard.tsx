@@ -10,7 +10,7 @@ interface CurrentProduct {
 }
 
 export const ProductCard = ({ product }: CurrentProduct) => {
-    const { cart, setCart } = React.useContext(CartContext);
+    const { cart } = React.useContext(CartContext);
     console.log(cart, '==current ....')
     const [state, dispatch] = React.useReducer(CartReducer, cart);
 

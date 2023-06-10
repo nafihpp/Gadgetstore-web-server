@@ -1,6 +1,7 @@
 .trending-container {
     background: #f1f4fd;
     padding-top: 10px;
+    padding-bottom: 48px;
 }
 .swiper-navigation-prev {
     display: flex;

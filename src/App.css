@@ -30,4 +30,9 @@
     .swiper-container {
         width: 768px;
     }
+    ::-webkit-scrollbar-thumb {
+        background-color: #c4cad0;
+        border-radius: 8px;
+        border: 2px solid #fff;
+    }
 }

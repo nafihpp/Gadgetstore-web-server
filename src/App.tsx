@@ -1,10 +1,7 @@
 
 import './App.css'
-import React, { useReducer, useRef } from 'react'
 // import { ProductContext } from './context/ProductContext/ProductContext'
-import { CartContext } from './context/CartContext/CartContext';
 import { Header } from './components/Header';
-import { CartReducer } from './context/CartContext/CartReducer';
 import { BottomNavigationBar } from './components/BottomNavigation/BottomNavigationBar';
 import { HomePage } from './pages/HomePage';
 import { Route, Routes } from 'react-router-dom'
@@ -15,12 +12,8 @@ import { ProductDetails } from './pages/ProductDetails';
 
 function App() {
   // const { products, productLoading } = React.useContext(ProductContext);
-  const { cart } = React.useContext(CartContext);
-
-  const [state, dispatch] = useReducer(CartReducer, cart);
 
   return (
-
     <div>
       <Header />
       <Routes>

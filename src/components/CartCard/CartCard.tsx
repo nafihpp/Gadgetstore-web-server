@@ -1,5 +1,5 @@
 import "./CartCard.css"
-import React, { useState } from "react"
+import { useState } from "react"
 interface CartItemProps {
     title: string;
     price: number;

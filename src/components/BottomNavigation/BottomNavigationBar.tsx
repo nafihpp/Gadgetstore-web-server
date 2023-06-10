@@ -1,13 +1,11 @@
 import React, { useContext } from 'react'
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import FolderIcon from '@mui/icons-material/Folder';
-import RestoreIcon from '@mui/icons-material/Restore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { Avatar, Badge } from "@mui/material";
 import { CartContext } from '../../context/CartContext/CartContext';
 import { useNavigate } from 'react-router-dom';
+import Badge from '@mui/material/Badge/Badge';
 
 export const BottomNavigationBar = () => {
     const { cart } = useContext(CartContext);
@@ -15,6 +13,7 @@ export const BottomNavigationBar = () => {
     const [value, setValue] = React.useState('home');
 
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+        console.log(event);
         setValue(newValue);
     };
 

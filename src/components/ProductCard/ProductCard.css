@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-
+    cursor: pointer;
     height: 188px;
     max-height: 170px;
     min-height: 211px;
