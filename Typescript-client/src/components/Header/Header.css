@@ -82,6 +82,9 @@
     .search-icon-toggle {
         display: block;
     }
+    .header-container .right-container .profile-container {
+        display: none;
+    }
 }
 .middle-link {
     margin-right: 40px;
