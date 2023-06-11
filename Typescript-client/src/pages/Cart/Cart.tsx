@@ -5,6 +5,7 @@ import "./Cart.css";
 import 'react-toastify/dist/ReactToastify.css';
 export const Cart = () => {
     const { cart } = React.useContext(CartContext);
+    let isCartLength = cart?.length !== 0;
     // State for coupon code
     const [couponCode, setCouponCode] = React.useState('');
 
@@ -27,22 +28,23 @@ export const Cart = () => {
                     )}
                 </div>
             </div>
-            <div className="cart-total">
+            {isCartLength && <div className="cart-total">
                 <h2 className="total-text">Total: ${100}</h2>
-                <div className="coupon-container">
-                    <input
-                        type="text"
-                        placeholder="Enter coupon code"
-                        value={couponCode}
-                        onChange={handleCouponCodeChange}
-                        className="coupon-input"
-                    />
-                    <button className="coupon-button" >
-                        Apply Coupon
-                    </button>
-                </div>
-            </div>
-            <button className="checkout-button">Checkout</button>
+            </div>}
+            {isCartLength && <div className="coupon-container">
+                <p>Have a Coupon Code?</p>
+                <input
+                    type="text"
+                    placeholder="Enter coupon code"
+                    value={couponCode}
+                    onChange={handleCouponCodeChange}
+                    className="coupon-input"
+                />
+                <button className="coupon-button" >
+                    Apply Coupon
+                </button>
+            </div>}
+            {isCartLength && <button className="checkout-button">Checkout</button>}
         </div>
     )
 }

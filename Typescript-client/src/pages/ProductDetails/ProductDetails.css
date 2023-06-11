@@ -6,6 +6,8 @@
 
 .product-images {
     display: flex;
+    width: 50%;
+    max-height: 200px;
 }
 
 .product-details {

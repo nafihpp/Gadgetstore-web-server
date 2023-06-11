@@ -1,11 +1,20 @@
 import { useEffect } from 'react'
-import Profile from '../../assets/ProfileImage.jpg'
 import './ProductDetails.css'
 import axios from 'axios'
 import React from 'react'
 import { gadgetProduct } from '../../models/models'
 import { useParams } from 'react-router-dom'
 import { LoadingScreen } from '../LoadingScreen'
+// import Swiper core and required modules
+import { Pagination } from 'swiper';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 export const ProductDetails = () => {
     const { id } = useParams();
@@ -27,7 +36,20 @@ export const ProductDetails = () => {
     return (
         <div className="product-details-page">
             <div className="product-images">
-                <img src={currentProduct?.thumbnail} alt="img" />
+                <Swiper
+                    className="product-details-swiper"
+                    modules={[Pagination]}
+                    spaceBetween={0}
+                    slidesPerView={1}
+                    pagination={{ clickable: true }}
+
+                >
+                    {currentProduct?.images.map((image, index) => (
+                        <SwiperSlide key={index}>
+                            <img src={image} alt={`Product Image ${index + 1}`} />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
             <div className="product-details">
                 <h2 className="product-title">{currentProduct?.title}</h2>

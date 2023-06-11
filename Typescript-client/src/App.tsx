@@ -18,7 +18,6 @@ import { Profile } from './pages/Profile';
 import { CategoryFiltering } from './pages/CategoryFiltering';
 
 function App() {
-  console.log("welcome")
   return (
     <div>
       <Header />

@@ -57,6 +57,7 @@ export const TrendingProducts = () => {
                         breakpoints={{
                             200: {
                                 width: 200,
+                                spaceBetween: 10,
                                 slidesPerView: 1,
                             },
                             300: {
@@ -66,6 +67,7 @@ export const TrendingProducts = () => {
                             },
                             480: {
                                 width: 480,
+                                spaceBetween: 10,
                                 slidesPerView: 3,
                             },
                             // when window width is >= 768px

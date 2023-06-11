@@ -1,3 +1,12 @@
+.card-container-product {
+    position: relative;
+}
+.card-container-product .favorite {
+    position: absolute;
+    bottom: -2px;
+    right: 10px;
+    cursor: pointer;
+}
 .card {
     border-radius: 4px;
     display: flex;
@@ -6,8 +15,21 @@
     cursor: pointer;
     height: 188px;
     max-height: 170px;
-    min-height: 211px;
+    min-height: 226px;
     background: #fff;
+    width: 168px;
+    position: relative;
+}
+.card .trending-text-container {
+    position: absolute;
+    left: 0px;
+    border-radius: 2px;
+    top: 0px;
+    background: #ffd800;
+    padding: 3px;
+}
+.card .trending-text-container .trending-text {
+    color: #fff;
 }
 .card .card-title {
     white-space: nowrap;

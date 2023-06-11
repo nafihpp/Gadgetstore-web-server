@@ -18,7 +18,7 @@ export interface gadgetProduct {
     category: string;
     description: string;
     discountPercentage: number;
-    id: string;
+    id: string | number;
     images: string[];
     price: number;
     rating: number;
