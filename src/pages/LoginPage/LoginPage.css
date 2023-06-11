@@ -2,6 +2,8 @@
     padding: 10px;
     border-radius: 4px;
     width: 290px;
+    margin: 50px auto;
+    background: antiquewhite;
 }
 .login-container .top-container {
     width: 100%;

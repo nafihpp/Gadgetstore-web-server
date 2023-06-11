@@ -22,6 +22,11 @@
     text-decoration: none;
     color: #000;
 }
+@media all and (max-width: 380px) {
+    .categories-container .category {
+        width: 140px;
+    }
+}
 .categories-container .category p {
     margin: 4px 0 5px 0;
 }

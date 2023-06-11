@@ -5,10 +5,10 @@ import { BottomNavigationContext } from '../../context/BottomNavigationContext/B
 
 export const ProtectedAfterLogin = () => {
     const { auth } = React.useContext(AuthContext);
-    const { setNavigationValue } = React.useContext(BottomNavigationContext)
+    const { setNavigationValue } = React.useContext(BottomNavigationContext);
     if (!auth) {
         return <Outlet />
     }
-    setNavigationValue("home");
+    (setNavigationValue as React.Dispatch<React.SetStateAction<string>>)("home");
     return <Navigate to="/" />
 }

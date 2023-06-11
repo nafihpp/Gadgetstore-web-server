@@ -2,6 +2,7 @@ import React from "react";
 import { CartCard } from "../../components/CartCard"
 import { CartContext } from "../../context/CartContext/CartContext"
 import "./Cart.css";
+import 'react-toastify/dist/ReactToastify.css';
 export const Cart = () => {
     const { cart } = React.useContext(CartContext);
     // State for coupon code

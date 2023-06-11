@@ -48,7 +48,7 @@ export const LoginPage = () => {
                     </form>
                 </div>
                 <p className="bottom-link">
-                    New to Movie Logham?{" "}
+                    New Here?{" "}
                     <Link to="/signup">Sign up now.</Link>
                 </p>
             </div>

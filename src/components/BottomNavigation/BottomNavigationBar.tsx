@@ -13,10 +13,8 @@ export const BottomNavigationBar = () => {
     const { navigationValue, setNavigationValue } = React.useContext(BottomNavigationContext);
 
     const handleChange = (event: React.SyntheticEvent, newValue: string): void => {
-        console.log(event);
-        if (newValue) {
-            setNavigationValue(newValue);
-        }
+        (setNavigationValue as React.Dispatch<React.SetStateAction<string>>)(newValue);
+        console.log(event, '==event current')
     };
 
     React.useEffect(() => {

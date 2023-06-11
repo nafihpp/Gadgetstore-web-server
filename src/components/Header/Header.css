@@ -46,6 +46,12 @@
 .header-container .right-container {
     display: flex;
 }
+.header-container .right-container button {
+    background: none;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+}
 .header-container .right-container .profile-container {
     margin-right: 10px;
     display: flex;
@@ -55,11 +61,15 @@
     text-decoration: none;
     color: #000;
 }
-
+.search-icon-toggle {
+    display: none;
+}
+.back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
 @media all and (max-width: 781px) {
-    .header-container .right-container {
-        display: none;
-    }
     .header-container .hamburger {
         display: flex !important;
     }
@@ -67,6 +77,9 @@
         display: block;
     }
     .hamburger-container {
+        display: block;
+    }
+    .search-icon-toggle {
         display: block;
     }
 }

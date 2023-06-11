@@ -9,7 +9,7 @@ export const CategoryFiltering = () => {
     const [value, setValue] = React.useState<number[]>([20, 37]);
     const minDistance = 10;
     function valuetext(value: number) {
-        return `${value}°C`;
+        return `${value}`;
     }
     const handleChange = (
         event: Event,

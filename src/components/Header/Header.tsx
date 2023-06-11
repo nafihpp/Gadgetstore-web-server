@@ -14,6 +14,11 @@ export const Header = () => {
     const { setNavigationValue } = React.useContext(BottomNavigationContext);
     const [searchQuery, setSearchQuery] = React.useState("")
     const [isOpen, setOpen] = React.useState<boolean>(false);
+    const [isSearchBar, setSearchBar] = React.useState<boolean>(false);
+    const [screenWidth, setScreenWidth] = React.useState<number>(0);
+    const handleSearchBar = () => {
+        setSearchBar(!isSearchBar);
+    }
 
     const toggleMenu = () => {
         setOpen(!isOpen);
@@ -25,9 +30,28 @@ export const Header = () => {
     const searchHandle = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {
         setSearchQuery(e?.target?.value)
     }
+    React.useEffect(() => {
+        const handleResize = () => {
+            setScreenWidth(window.innerWidth);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
     return (
         <header className="header-container">
             <div className="wrapper">
+                {!isSearchBar ?
+                    <button className="hamburger" onClick={toggleMenu}>
+                        <span className="line"></span>
+                        <span className="line"></span>
+                        <span className="line"></span>
+                    </button> :
+                    <button onClick={handleSearchBar} className="back-button">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="25" width="25" xmlns="http://www.w3.org/2000/svg"><path d="M401.4 224h-214l83-79.4c11.9-12.5 11.9-32.7 0-45.2s-31.2-12.5-43.2 0L89 233.4c-6 5.8-9 13.7-9 22.4v.4c0 8.7 3 16.6 9 22.4l138.1 134c12 12.5 31.3 12.5 43.2 0 11.9-12.5 11.9-32.7 0-45.2l-83-79.4h214c16.9 0 30.6-14.3 30.6-32 .1-18-13.6-32-30.5-32z"></path></svg>
+                    </button>
+                }
                 <Link className="logo" to="/" onClick={() => handleNavigation("home")}>
                     <img
                         src="https://f.nooncdn.com/s/app/com/noon/design-system/logos/noon-logo-en.svg"
@@ -37,7 +61,7 @@ export const Header = () => {
                         style={{ objectFit: "contain" }}
                     />
                 </Link>
-                <div className="middle-container">
+                {isSearchBar && <div className="middle-container">
                     <input placeholder="search here" onChange={searchHandle} value={searchQuery} />
                     <div className="search-icon-container">
                         {!searchQuery ? (
@@ -76,8 +100,24 @@ export const Header = () => {
                             </div>
                         )}
                     </div>
-                </div>
-                <div className="right-container">
+                </div>}
+                {!isSearchBar && <div className="right-container">
+                    <button onClick={handleSearchBar} className="search-icon-toggle">
+                        <svg
+                            stroke="currentColor"
+                            fill="none"
+                            strokeWidth="2"
+                            viewBox="0 0 24 24"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            height="30"
+                            width="30"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
                     <Link className="profile-container" to="/profile" onClick={() => handleNavigation("account")}>
                         <Avatar
                             alt={Profile}
@@ -86,7 +126,6 @@ export const Header = () => {
                         <p>{!auth ? "Login/Signup" : ""}</p>
                     </Link>
                     <Link className="cart-container" to="/cart" onClick={() => handleNavigation("cart")}>
-
                         <Badge badgeContent={cart?.length} color="success" anchorOrigin={{
                             vertical: 'bottom',
                             horizontal: 'right',
@@ -95,13 +134,8 @@ export const Header = () => {
 
                         </Badge>
                     </Link>
-                </div>
+                </div>}
                 <div className="hamburger-container">
-                    <button className="hamburger" onClick={toggleMenu}>
-                        <span className="line"></span>
-                        <span className="line"></span>
-                        <span className="line"></span>
-                    </button>
                     <div className={`menu ${isOpen && "open"}`}>
                         <div>
                             <Link to="/"
@@ -136,6 +170,6 @@ export const Header = () => {
                     ></div>
                 </div>
             </div>
-        </header>
+        </header >
     );
 };

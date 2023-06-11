@@ -1,6 +1,7 @@
 .partner-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     padding: 20px 0;
 }
 .partner-container .trusted-img-container {

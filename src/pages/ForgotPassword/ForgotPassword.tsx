@@ -3,9 +3,10 @@ import "./ForgotPassword.css";
 
 export const ForgotPassword = () => {
     return (
-        <div className="wrapper">
-            <div className={`login-container`}>
-                <div className="top">
+
+        <div className="forgot-password-container">
+            <div className="forgot-top-container">
+                <div className="forgot-container">
                     <h1>Forgot Password</h1>
                     <form autoComplete="off" className="login-form">
                         <input placeholder="Email" />
@@ -15,7 +16,9 @@ export const ForgotPassword = () => {
                 <p>
                     Remember Password? <Link to="/login">Login now.</Link>
                 </p>
+
             </div>
         </div>
+
     );
 };

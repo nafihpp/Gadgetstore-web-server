@@ -2,11 +2,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 350px;
+    margin: 50px auto;
+    background: antiquewhite;
+    width: 290px;
 }
 .signup-container .top-signup-container {
     width: 100%;
+    padding: 10px;
+    border-radius: 4px;
 }
 .signup-container h1 {
     text-align: center;
