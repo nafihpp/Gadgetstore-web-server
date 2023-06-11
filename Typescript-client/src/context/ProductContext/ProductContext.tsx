@@ -1,22 +1,20 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-import { Product, children } from "../../models/models";
+import { children, gadgetProduct } from "../../models/models";
 
 export interface IproductContext {
-    products: Product[];
-    setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
+    products: gadgetProduct[];
+    setProducts: React.Dispatch<React.SetStateAction<gadgetProduct[]>>;
     productLoading: boolean;
     setProductLoading: React.Dispatch<React.SetStateAction<boolean>>;
-    error: string;
-    setError: React.Dispatch<React.SetStateAction<string>>;
+
 }
 
 export const ProductContext = createContext<Partial<IproductContext>>({});
 
 export const ProductProvider = ({ children }: children) => {
-    const [products, setProducts] = useState<Product[]>([]);
+    const [products, setProducts] = useState<gadgetProduct[]>([]);
     const [productLoading, setProductLoading] = useState(true);
-    const [error, setError] = useState("");
 
     useEffect(() => {
         fetchProducts();
@@ -24,19 +22,20 @@ export const ProductProvider = ({ children }: children) => {
 
     const fetchProducts = () => {
         axios
-            .get("https://fakestoreapi.com/products")
+            .get("https://gadgetstorebackend.onrender.com/api/all-products")
             .then((response) => {
                 setProducts(response?.data);
-                setProductLoading(false)
+                setProductLoading(false);
             })
             .catch((err: Error) => {
-                setError(err.message)
+                console.log(err)
+            }).finally(() => {
                 setProductLoading(false);
             });
     };
 
     return (
-        <ProductContext.Provider value={{ products, setProducts, productLoading, error }}>
+        <ProductContext.Provider value={{ products, setProducts, productLoading }}>
             {children}
         </ProductContext.Provider>
     )

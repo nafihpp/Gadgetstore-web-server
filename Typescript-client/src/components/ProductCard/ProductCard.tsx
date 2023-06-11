@@ -19,7 +19,7 @@ export const ProductCard = ({ product }: CurrentProduct) => {
         let OriginalPrice = prouctPrice * discountPercentage;
         return OriginalPrice.toFixed(0);
     }
-    console.log(state, '==currentCart')
+    console.log(state, '==')
     const handleDetailsPage = (productId: string) => {
         navigate(`/products/${productId}`)
     }

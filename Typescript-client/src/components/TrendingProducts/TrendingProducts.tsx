@@ -1,14 +1,15 @@
 import React, { SyntheticEvent, useRef } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
-import products from "../../dummy.json";
 import { gadgetProduct } from '../../models/models';
 import { ProductCard } from '../ProductCard';
 import "./TrendingProducts.css"
 import "swiper/css";
 import "swiper/swiper-bundle.css";
+import { ProductContext } from '../../context/ProductContext/ProductContext';
 
 
 export const TrendingProducts = () => {
+    const { products } = React.useContext(ProductContext);
     const swiperRef = useRef(null) as any;
     const HeadingRef = React.useRef<HTMLHeadingElement | null>(null);
 
