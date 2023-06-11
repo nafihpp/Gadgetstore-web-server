@@ -1,4 +1,5 @@
 import './App.css'
+import './styles/global.css'
 import { Header } from './components/Header';
 import { BottomNavigationBar } from './components/BottomNavigation';
 import { HomePage } from './pages/HomePage/HomePage';

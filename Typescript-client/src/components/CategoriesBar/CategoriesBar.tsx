@@ -14,7 +14,7 @@ export const CategoriesBar = () => {
     return (
         <div className="categories-container">
             <div className="wrapper-flex">
-                <Link className="category" to="/">
+                <Link className="category" to="/category">
                     <Avatar
                         src={Mobile}
                         alt="Mobile-phone"
@@ -22,7 +22,7 @@ export const CategoriesBar = () => {
                     />
                     <p>Mobile Phones</p>
                 </Link>
-                <Link className="category" to="/">
+                <Link className="category" to="/category">
                     <Avatar
                         src={Laptop}
                         alt="Laptops"
@@ -30,7 +30,7 @@ export const CategoriesBar = () => {
                     />
                     <p>Laptop</p>
                 </Link>
-                <Link className="category" to="/">
+                <Link className="category" to="/category">
                     <Avatar
                         src={Accesories}
                         alt="accessories"
@@ -38,7 +38,7 @@ export const CategoriesBar = () => {
                     />
                     <p>Accessories</p>
                 </Link>
-                <Link className="category" to="/">
+                <Link className="category" to="/category">
                     <Avatar
                         src={Headphones}
                         alt="headphones"
@@ -46,7 +46,7 @@ export const CategoriesBar = () => {
                     />
                     <p>Headphones</p>
                 </Link>
-                <Link className="category" to="/">
+                <Link className="category" to="/category">
                     <Avatar
                         src={Tablet}
                         alt="tablet"
@@ -54,7 +54,7 @@ export const CategoriesBar = () => {
                     />
                     <p>Tablets</p>
                 </Link>
-                <Link className="category" to="/">
+                <Link className="category" to="/category">
                     <Avatar
                         src={SmartWatch}
                         alt="Smart Watch"
@@ -62,7 +62,7 @@ export const CategoriesBar = () => {
                     />
                     <p>Smart Watches</p>
                 </Link>
-                <Link className="category" to="/">
+                <Link className="category" to="/category">
                     <Avatar
                         src={Television}
                         alt="Television"
@@ -70,98 +70,21 @@ export const CategoriesBar = () => {
                     />
                     <p>Television</p>
                 </Link>
-                <Link className="category" to="/">
+                <Link className="category" to="/category">
                     <Avatar
                         alt={Profile}
                         sx={{ width: 55, height: 55 }}
                     />
                     <p>Category</p>
                 </Link>
-                <Link className="category" to="/">
+                <Link className="category" to="/category">
                     <Avatar
                         alt={Profile}
                         sx={{ width: 55, height: 55 }}
                     />
                     <p>Category</p>
                 </Link>
-                <Link className="category" to="/">
-                    <Avatar
-                        alt={Profile}
-                        sx={{ width: 55, height: 55 }}
-                    />
-                    <p>Category</p>
-                </Link>
-                <Link className="category" to="/">
-                    <Avatar
-                        alt={Profile}
-                        sx={{ width: 55, height: 55 }}
-                    />
-                    <p>Category</p>
-                </Link>
-                <Link className="category" to="/">
-                    <Avatar
-                        alt={Profile}
-                        sx={{ width: 55, height: 55 }}
-                    />
-                    <p>Category</p>
-                </Link>
-                <Link className="category" to="/">
-                    <Avatar
-                        alt={Profile}
-                        sx={{ width: 55, height: 55 }}
-                    />
-                    <p>Category</p>
-                </Link>
-                <Link className="category" to="/">
-                    <Avatar
-                        alt={Profile}
-                        sx={{ width: 55, height: 55 }}
-                    />
-                    <p>Category</p>
-                </Link>
-                <Link className="category" to="/">
-                    <Avatar
-                        alt={Profile}
-                        sx={{ width: 55, height: 55 }}
-                    />
-                    <p>Category</p>
-                </Link>
-                <Link className="category" to="/">
-                    <Avatar
-                        alt={Profile}
-                        sx={{ width: 55, height: 55 }}
-                    />
-                    <p>Category</p>
-                </Link>
-                <Link className="category" to="/">
-                    <Avatar
-                        alt={Profile}
-                        sx={{ width: 55, height: 55 }}
-                    />
-                    <p>Category</p>
-                </Link>
-                <Link className="category" to="/">
-                    <Avatar
-                        alt={Profile}
-                        sx={{ width: 55, height: 55 }}
-                    />
-                    <p>Category</p>
-                </Link>
-                <Link className="category" to="/">
-                    <Avatar
-                        alt={Profile}
-                        sx={{ width: 55, height: 55 }}
-                    />
-                    <p>Category</p>
-                </Link>
-                <Link className="category" to="/">
-                    <Avatar
-                        alt={Profile}
-                        sx={{ width: 55, height: 55 }}
-                    />
-                    <p>Category</p>
-                </Link>
-                <Link className="category" to="/">
+                <Link className="category" to="/category">
                     <Avatar
                         alt={Profile}
                         sx={{ width: 55, height: 55 }}

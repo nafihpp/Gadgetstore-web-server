@@ -10,13 +10,7 @@ export const CartReducer = (state: any, action: CartAction) => {
     switch (type) {
         case ACTIONS.ADD_TO_CART:
             console.log(payload, '===payload');
-            console.log(cart, '--cart')
-            // let cartProduct = {
-            //     title: payload?.title,
-            //     quantity: count,
-            //     price: product.price,
-            //     image: product?.thumbnail
-            // }
+            console.log(cart, '--cart');
             return state;
         case ACTIONS.REMOVE_FROM_CART:
             console.log(payload, '===payload')

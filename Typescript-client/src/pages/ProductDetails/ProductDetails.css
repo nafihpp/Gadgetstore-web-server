@@ -8,11 +8,6 @@
     display: flex;
 }
 
-.product-images img {
-    width: 100%;
-    display: block;
-}
-
 .product-details {
     padding: 0 20px;
 }

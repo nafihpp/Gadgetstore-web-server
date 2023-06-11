@@ -11,8 +11,9 @@ export const ProductDetails = () => {
     const { id } = useParams();
     const [currentProduct, setCurrentProduct] = React.useState<gadgetProduct>()
     const [loading, setLoading] = React.useState(true);
+    const BASE_URL = import.meta.env.VITE_BASE_URL;
     useEffect(() => {
-        axios(`https://gadgetstorebackend.onrender.com/api/product/${id}`, {
+        axios(`${BASE_URL}/product/${id}`, {
             method: "GET",
         }).then((response) => {
             setCurrentProduct(response.data);
@@ -30,15 +31,17 @@ export const ProductDetails = () => {
             </div>
             <div className="product-details">
                 <h2 className="product-title">{currentProduct?.title}</h2>
-                <p className="product-brand">{currentProduct?.id}</p>
-                <p className="product-category">Phone</p>
-                <p className="product-description">Great product Description</p>
+                <p className="product-brand">{currentProduct?.brand}</p>
+                <p className="product-description">{currentProduct?.description}</p>
                 <p className="product-price">
                     Price: ${1000} {100 > 0 && <span className="discount">(-10%)</span>}
                 </p>
-                <p className="product-rating">Rating: 3 star</p>
-                <p className="product-stock">Stock: In Stock</p>
-                <button className="add-to-cart-button">Add to Cart</button>
+                <p className="product-rating">{currentProduct?.rating}</p>
+                <p className="product-stock">{currentProduct?.stock === 0 ? "Item Not in Stock" : "In Stock"}</p>
+                <div className='button-container'>
+                    <button className="buy-now-button">Buy Now</button>
+                    <button className="add-to-cart-button">Add to Cart</button>
+                </div>
             </div>
         </div>
     )

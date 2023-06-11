@@ -1,4 +1,4 @@
-import ProfileImage from "../../assets/ProfileImage.jpg";
+import ProfileImage from "../../assets/profile.png";
 import "./Profile.css"
 export const Profile = () => {
     return (
@@ -10,7 +10,7 @@ export const Profile = () => {
                         src={ProfileImage}
                         width="190"
                         height="190"
-                        style={{ objectFit: "contain", borderRadius: "50%" }}
+                        style={{ objectFit: "cover", borderRadius: "50%" }}
                     />
                 </div>
             </div>

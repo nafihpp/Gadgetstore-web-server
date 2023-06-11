@@ -14,7 +14,7 @@ export const Cart = () => {
     };
     return (
         <div className="cart-page">
-            <h1 className="cart-title">Your Cart</h1>
+            <h1 className="cart-title">Cart</h1>
             <div className="cart-items">
                 <div className="card-container">
                     {/* Render the cart items here */}

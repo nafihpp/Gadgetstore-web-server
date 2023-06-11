@@ -1,9 +1,10 @@
 import "./LoadingScreen.css";
+import Logo from "../../assets/noon-logo.svg"
 
 export const LoadingScreen = () => {
     return (
         <div className="loading-container">
-            <h1>LoadingScreen</h1>
+            <img src={Logo} width="100" height="100" />
         </div>
     )
 }
