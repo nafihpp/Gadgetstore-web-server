@@ -3,7 +3,7 @@ import "./Favorites.css";
 import { FavoriteContext } from "../../context/FavoritesContext/FavoritesContext";
 
 export const Favourites = () => {
-    const { favorites, setFavorites } = useContext(FavoriteContext);
+    const { favorites } = useContext(FavoriteContext);
 
     const isFavourite = (current: any) => {
         const isFavour = favorites?.some(

@@ -17,6 +17,7 @@ export const Header = () => {
     const [isSearchBar, setSearchBar] = React.useState<boolean>(false);
     const [screenWidth, setScreenWidth] = React.useState<number>(0);
     const handleSearchBar = () => {
+        console.log(screenWidth)
         setSearchBar(!isSearchBar);
     }
 
@@ -25,7 +26,7 @@ export const Header = () => {
     };
 
     const handleNavigation = (value: string) => {
-        setNavigationValue(value);
+        (setNavigationValue as React.Dispatch<React.SetStateAction<string>>)(value);
     }
     const searchHandle = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {
         setSearchQuery(e?.target?.value)
