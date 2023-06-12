@@ -5,7 +5,6 @@ import React from 'react'
 import { gadgetProduct } from '../../models/models'
 import { useParams } from 'react-router-dom'
 import { LoadingScreen } from '../LoadingScreen'
-// import Swiper core and required modules
 import SwiperCore, { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
