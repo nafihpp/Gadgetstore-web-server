@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import "./Favorites.css";
 import { FavoriteContext } from "../../context/FavoritesContext/FavoritesContext";
+import { useNavigate } from "react-router-dom";
 
 export const Favourites = () => {
+    const navigate = useNavigate();
     const { favorites } = useContext(FavoriteContext);
 
     if (favorites?.length === 0) {
@@ -15,6 +17,9 @@ export const Favourites = () => {
         );
     }
     console.log(favorites, '===favieee')
+    const handleDetailsPage = (productId: string | number) => {
+        navigate(`/products/${productId}`)
+    }
     return (
         <div className="favourite-container">
             <div className="wrapper">
@@ -26,7 +31,7 @@ export const Favourites = () => {
                 </div>
 
                 {favorites?.map((item: any) => (
-                    <div className="favorite-item">
+                    <div className="favorite-item" onClick={() => handleDetailsPage(item?.id)}>
                         <img src={item?.thumbnail} width="100" height="100" style={{ objectFit: "cover" }} />
                         <h2 className="favourite-title">{item?.title}</h2>
                         <div

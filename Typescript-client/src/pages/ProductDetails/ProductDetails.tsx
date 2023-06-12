@@ -30,6 +30,7 @@ export const ProductDetails = () => {
     if (loading) {
         return <LoadingScreen />
     }
+
     return (
         <div className="product-details-page">
             <div className="product-images">
