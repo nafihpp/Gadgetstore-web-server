@@ -25,9 +25,6 @@ export const Cart = () => {
                     )}
                 </div>
             </div>
-            {isCartLength && <div className="cart-total">
-                <h2 className="total-text">Total: ${100}</h2>
-            </div>}
             {isCartLength && <div className="coupon-container">
                 <p>Have a Coupon Code?</p>
                 <input
@@ -40,6 +37,11 @@ export const Cart = () => {
                 <button className="coupon-button" onClick={handleCouponCodeChange} >
                     Apply Coupon
                 </button>
+            </div>}
+            {isCartLength && <div className="cart-total">
+                <h2 className="total-text">Sub Total: ${100}</h2>
+                <h2 className="total-text">Coupon Discount: ${100}</h2>
+                <h2 className="total-text">Total: ${100}</h2>
             </div>}
             {isCartLength && <button className="checkout-button">Checkout</button>}
         </div>
