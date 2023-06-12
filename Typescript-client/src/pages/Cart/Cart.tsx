@@ -32,7 +32,7 @@ export const Cart = () => {
                 </div>
             </div>
             {isCartLength && <div className="coupon-container">
-                <p>Have a Coupon Code?</p>
+                <p>Have a Coupon Code??</p>
                 <input
                     type="text"
                     placeholder="Enter coupon code"
