@@ -22,7 +22,8 @@
     background: #f5f5f6;
     color: #282c3f;
     align-items: center;
-    width: 72px;
+    width: 98px;
+    margin: 10px auto;
     justify-content: center;
     border-radius: 4px;
     margin-top: 10px;
@@ -31,11 +32,13 @@
     font-size: 30px;
     cursor: pointer;
     margin-right: 10px;
+    padding: 0 10px;
 }
 .product-details .product-quantity .increase-cart {
     font-size: 30px;
     cursor: pointer;
     margin-left: 10px;
+    padding: 0 10px;
 }
 
 .product-title {

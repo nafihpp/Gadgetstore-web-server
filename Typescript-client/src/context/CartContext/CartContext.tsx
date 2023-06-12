@@ -19,7 +19,7 @@ export const CartContext = createContext<Partial<ICartContext>>({});
 export const CartProvider = ({ children }: children) => {
     const [cart, setCart] = useState<CartItemProps[]>([
         {
-            id: 1000,
+            id: 1,
             title: "Iphone 14 pro",
             thumbnail: "https://i.dummyjson.com/data/products/1/1.jpg",
             price: 1000,

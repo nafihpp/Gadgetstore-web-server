@@ -13,6 +13,7 @@ import { Rating } from '@mui/material'
 import { CartContext } from '../../context/CartContext/CartContext'
 import { CartReducer } from '../../context/CartContext/CartReducer'
 import { ACTIONS } from '../../context/CartContext/ACTIONS'
+import { toast } from 'react-toastify'
 
 SwiperCore.use([Autoplay]);
 
@@ -46,7 +47,13 @@ export const ProductDetails = () => {
             quantity: count,
 
         } as CartItemProps;
-        dispatch({ type: ACTIONS.ADD_TO_CART, payload: cartProduct })
+        const isExist = cart?.find((item) => item.id === product.id)
+        if (!isExist) {
+            dispatch({ type: ACTIONS.ADD_TO_CART, payload: cartProduct })
+        }
+        else {
+            return toast.error("item already in cart")
+        }
     }
 
     const increment = () => {
@@ -84,7 +91,7 @@ export const ProductDetails = () => {
             </div>
             <div className="product-details">
                 <div className="wrapper">
-                    <div className="product-quantity"><span className="decrease-cart" onClick={decrement} >-</span>{<span>{count}</span>}<span className="increase-cart" onClick={increment}>+</span></div>
+                    <div className="product-quantity"><span className="decrease-cart" onClick={decrement} >-</span>{<strong>{count}</strong>}<span className="increase-cart" onClick={increment}>+</span></div>
                     <h2 className="product-title">{currentProduct?.title}</h2>
                     <p className="product-description">{currentProduct?.description}</p>
                     <p className="product-price">
