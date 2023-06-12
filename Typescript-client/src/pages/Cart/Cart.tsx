@@ -10,6 +10,7 @@ export const Cart = () => {
     const handleCouponCodeChange = (e: any) => {
         setCouponCode(e?.target?.value);
     };
+    console.log('okkk')
     return (
         <div className="cart-page">
             <h1 className="cart-title">Cart</h1>
