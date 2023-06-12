@@ -6,13 +6,16 @@
     width: 260px;
     height: 100vh;
 }
-.bottom-filter-container {
-    position: fixed;
-    bottom: 59px;
-    left: 0px;
-    width: 100%;
-    background: #fff;
+@media all and (max-width: 781px) {
+    .bottom-filter-container {
+        position: fixed;
+        bottom: 59px;
+        left: 0px;
+        width: 100%;
+        background: #fff;
+    }
 }
+
 .bottom-filter-container .close-button {
     width: 50%;
     padding: 10px;

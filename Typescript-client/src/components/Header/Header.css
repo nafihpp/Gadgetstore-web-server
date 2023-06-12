@@ -75,14 +75,14 @@ header {
     cursor: pointer;
     margin: 10px;
 }
+.hamburger-container {
+    display: none;
+}
 @media all and (max-width: 781px) {
     .header-container .hamburger {
         display: flex !important;
     }
     .hamburger {
-        display: block;
-    }
-    .hamburger-container {
         display: block;
     }
     .search-icon-toggle {

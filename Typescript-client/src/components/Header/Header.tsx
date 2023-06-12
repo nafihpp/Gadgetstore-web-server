@@ -138,53 +138,53 @@ export const Header = () => {
                         </Badge>
                     </Link>
                 </div>}
-                <div className="hamburger-container">
-                    <div className={`menu ${isOpen && "open"}`}>
-                        <div>
-                            <Link to="/"
-                                className="link hamburger-link "
-                                style={{ marginTop: "10px", textDecoration: "none", color: "#000" }}
-                                onClick={() => {
-                                    toggleMenu()
-                                    handleNavigation("home")
-                                }}
 
-                            >
-                                Home
-                            </Link>
-                        </div>
-                        <div>
-                            <Link
-                                className="link hamburger-link"
-                                to="/cart"
-                                style={{ marginTop: "6px", textDecoration: "none", color: "#000" }}
-                                onClick={() => {
-                                    toggleMenu()
-                                    handleNavigation("cart")
-                                }}
-                            >
-                                Cart
-                            </Link>
-                        </div>
-                        <div>
-                            <Link
-                                className="link hamburger-link"
-                                to="/favorites"
-                                style={{ marginTop: "6px", textDecoration: "none", color: "#000" }}
-                                onClick={() => {
-                                    toggleMenu()
-                                    handleNavigation("favorites")
-                                }}
-                            >
-                                Wishlist
-                            </Link>
-                        </div>
+                <div className={`menu ${isOpen && "open"}`}>
+                    <div>
+                        <Link to="/"
+                            className="link hamburger-link "
+                            style={{ marginTop: "10px", textDecoration: "none", color: "#000" }}
+                            onClick={() => {
+                                toggleMenu()
+                                handleNavigation("home")
+                            }}
+
+                        >
+                            Home
+                        </Link>
                     </div>
-                    <div
-                        className={`sidebar ${isOpen && "open"}`} onClick={toggleMenu}
-                    ></div>
+                    <div>
+                        <Link
+                            className="link hamburger-link"
+                            to="/cart"
+                            style={{ marginTop: "6px", textDecoration: "none", color: "#000" }}
+                            onClick={() => {
+                                toggleMenu()
+                                handleNavigation("cart")
+                            }}
+                        >
+                            Cart
+                        </Link>
+                    </div>
+                    <div>
+                        <Link
+                            className="link hamburger-link"
+                            to="/favorites"
+                            style={{ marginTop: "6px", textDecoration: "none", color: "#000" }}
+                            onClick={() => {
+                                toggleMenu()
+                                handleNavigation("favorites")
+                            }}
+                        >
+                            Wishlist
+                        </Link>
+                    </div>
                 </div>
+                <div
+                    className={`sidebar ${isOpen && "open"}`} onClick={toggleMenu}
+                ></div>
             </div>
+
         </header >
     );
 };
