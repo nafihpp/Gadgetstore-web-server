@@ -7,6 +7,7 @@ import { CartProvider } from './context/CartContext/CartContext.tsx'
 import { BrowserRouter } from 'react-router-dom'
 import { BottomNavigationProvider } from './context/BottomNavigationContext/BottomNavigationContext.tsx'
 import { AuthProvider } from './context/AuthContext/AuthContext.tsx'
+import { FavouritesProvider } from './context/FavoritesContext/FavoritesContext.tsx'
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -14,11 +15,13 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <ProductProvider>
       <AuthProvider>
         <CartProvider>
-          <BottomNavigationProvider>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-          </BottomNavigationProvider>
+          <FavouritesProvider>
+            <BottomNavigationProvider>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </BottomNavigationProvider>
+          </FavouritesProvider>
         </CartProvider>
       </AuthProvider>
     </ProductProvider>
