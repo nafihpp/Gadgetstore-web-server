@@ -7,7 +7,7 @@ interface INavigationContext {
 export const BottomNavigationContext = React.createContext<Partial<INavigationContext>>({});
 
 export const BottomNavigationProvider = ({ children }: children) => {
-    const [navigationValue, setNavigationValue] = React.useState("");
+    const [navigationValue, setNavigationValue] = React.useState("home");
     return (
         <BottomNavigationContext.Provider value={{ navigationValue, setNavigationValue }}>{children}</BottomNavigationContext.Provider>
     )

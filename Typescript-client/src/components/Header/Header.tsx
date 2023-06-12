@@ -3,7 +3,7 @@ import { Avatar, Badge } from "@mui/material";
 import "./Header.css";
 import React, { useContext } from "react"
 import { CartContext } from "../../context/CartContext/CartContext";
-import Profile from "../../assets/profile.png";
+import Profile from "../../assets/avatar.png";
 import { Link } from "react-router-dom"
 import { BottomNavigationContext } from "../../context/BottomNavigationContext/BottomNavigationContext";
 import { AuthContext } from "../../context/AuthContext/AuthContext";
@@ -53,15 +53,16 @@ export const Header = () => {
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="25" width="25" xmlns="http://www.w3.org/2000/svg"><path d="M401.4 224h-214l83-79.4c11.9-12.5 11.9-32.7 0-45.2s-31.2-12.5-43.2 0L89 233.4c-6 5.8-9 13.7-9 22.4v.4c0 8.7 3 16.6 9 22.4l138.1 134c12 12.5 31.3 12.5 43.2 0 11.9-12.5 11.9-32.7 0-45.2l-83-79.4h214c16.9 0 30.6-14.3 30.6-32 .1-18-13.6-32-30.5-32z"></path></svg>
                     </button>
                 }
-                <Link className="logo" to="/" onClick={() => handleNavigation("home")}>
-                    <img
-                        src="https://f.nooncdn.com/s/app/com/noon/design-system/logos/noon-logo-en.svg"
-                        alt="logo"
-                        width="100"
-                        height="100"
-                        style={{ objectFit: "contain" }}
-                    />
-                </Link>
+                {!isSearchBar &&
+                    <Link className="logo" to="/" onClick={() => handleNavigation("home")}>
+                        <img
+                            src="https://f.nooncdn.com/s/app/com/noon/design-system/logos/noon-logo-en.svg"
+                            alt="logo"
+                            width="100"
+                            height="100"
+                            style={{ objectFit: "contain" }}
+                        />
+                    </Link>}
                 {isSearchBar && <div className="middle-container">
                     <input placeholder="search here" onChange={searchHandle} value={searchQuery} />
                     <div className="search-icon-container">
@@ -121,8 +122,9 @@ export const Header = () => {
                     </button>
                     <Link className="profile-container" to="/profile" onClick={() => handleNavigation("account")}>
                         <Avatar
-                            alt={Profile}
-                            sx={{ width: 30, height: 30 }}
+                            src={Profile}
+                            alt="Profile"
+                            sx={{ width: 40, height: 40 }}
                         />
                         <p>{!auth ? "Login/Signup" : ""}</p>
                     </Link>
@@ -140,9 +142,8 @@ export const Header = () => {
                     <div className={`menu ${isOpen && "open"}`}>
                         <div>
                             <Link to="/"
-
                                 className="link hamburger-link "
-                                style={{ marginTop: "10px" }}
+                                style={{ marginTop: "10px", textDecoration: "none", color: "#000" }}
                                 onClick={() => {
                                     toggleMenu()
                                     handleNavigation("home")
@@ -154,15 +155,28 @@ export const Header = () => {
                         </div>
                         <div>
                             <Link
-
                                 className="link hamburger-link"
                                 to="/cart"
+                                style={{ marginTop: "6px", textDecoration: "none", color: "#000" }}
                                 onClick={() => {
                                     toggleMenu()
                                     handleNavigation("cart")
                                 }}
                             >
                                 Cart
+                            </Link>
+                        </div>
+                        <div>
+                            <Link
+                                className="link hamburger-link"
+                                to="/favorites"
+                                style={{ marginTop: "6px", textDecoration: "none", color: "#000" }}
+                                onClick={() => {
+                                    toggleMenu()
+                                    handleNavigation("favorites")
+                                }}
+                            >
+                                Wishlist
                             </Link>
                         </div>
                     </div>

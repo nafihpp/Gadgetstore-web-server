@@ -1,7 +1,16 @@
 import { Slider } from '@mui/material';
 import React from 'react';
 import "./FilterSideBar.css"
-export const FilterSideBar = () => {
+
+interface ModalInterface {
+    isModal: boolean;
+    setModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const FilterSideBar = ({ isModal, setModal }: ModalInterface) => {
+    const handleClose = () => {
+        setModal(!isModal);
+    }
     const [value, setValue] = React.useState<number[]>([20, 37]);
     const minDistance = 10;
     function valuetext(value: number) {
@@ -30,7 +39,7 @@ export const FilterSideBar = () => {
         }
     };
     return (
-        <div className="filters">
+        <div className="filters" style={{ width: isModal ? "100%" : "260px" }}>
             <h2>Filters</h2>
             <div className="filter-group">
                 <h3>Price Range</h3>
@@ -91,7 +100,14 @@ export const FilterSideBar = () => {
                     </label>
                 </div>
             </div>
-
+            <div className='bottom-filter-container'>
+                {isModal && <button className='close-button' onClick={handleClose}>
+                    Close
+                </button>}
+                <button className='apply-button' style={{ width: isModal ? "50%" : "100%" }}>
+                    Apply now
+                </button>
+            </div>
         </div >
     )
 }

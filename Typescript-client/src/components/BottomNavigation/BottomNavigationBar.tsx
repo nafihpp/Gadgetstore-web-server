@@ -5,9 +5,11 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { CartContext } from '../../context/CartContext/CartContext';
 import { useNavigate } from 'react-router-dom';
 import Badge from '@mui/material/Badge/Badge';
-import { BottomNavigationContext } from "../../context/BottomNavigationContext/BottomNavigationContext"
+import { BottomNavigationContext } from "../../context/BottomNavigationContext/BottomNavigationContext";
 
 export const BottomNavigationBar = () => {
+
+
     const { cart } = useContext(CartContext);
     const navigate = useNavigate();
     const { navigationValue, setNavigationValue } = React.useContext(BottomNavigationContext);
@@ -33,7 +35,13 @@ export const BottomNavigationBar = () => {
 
     }, [navigationValue])
     return (
-        <BottomNavigation showLabels value={navigationValue} onChange={handleChange} sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}>
+
+        <BottomNavigation showLabels value={navigationValue} onChange={handleChange} sx={{
+            position: 'fixed', bottom: 0, left: 0, right: 0,
+            "& .Mui-selected, .Mui-selected > svg": {
+                color: "red"
+            }
+        }}>
             <BottomNavigationAction
                 label="Home"
                 value="home"
@@ -57,5 +65,6 @@ export const BottomNavigationBar = () => {
 
             </Badge>} />
         </BottomNavigation>
+
     )
 }

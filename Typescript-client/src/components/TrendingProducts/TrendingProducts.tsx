@@ -53,6 +53,7 @@ export const TrendingProducts = () => {
                     <Swiper
                         spaceBetween={20}
                         slidesPerView={6}
+                        loop={true}
                         ref={swiperRef}
                         breakpoints={{
                             200: {

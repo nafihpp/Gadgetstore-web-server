@@ -1,9 +1,11 @@
 .product-details-page {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
-
+.product-details-page .product-images {
+    width: 40%;
+}
 .product-images {
     display: flex;
     width: 50%;
@@ -11,32 +13,38 @@
 }
 
 .product-details {
-    padding: 0 20px;
+    margin: 0 auto;
+    padding: 35px 0;
 }
 
 .product-title {
+    color: #282c3f;
     font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.product-brand,
-.product-category {
-    font-size: 16px;
-    margin-bottom: 5px;
+    font-weight: 700;
 }
 
 .product-description {
-    margin-bottom: 10px;
+    color: #535665;
+    padding: 5px 20px 14px 0;
+    font-size: 20px;
+    opacity: 0.8;
+    font-weight: 400;
 }
 
 .product-price {
     font-size: 18px;
     margin-bottom: 10px;
 }
+.product-price .price {
+    font-weight: 900;
+    font-size: 24px;
+}
 
 .discount {
-    color: red;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ff905a;
 }
 
 .product-rating {
@@ -48,16 +56,50 @@
     font-size: 16px;
     margin-bottom: 10px;
 }
-
-.add-to-cart-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.button-container {
 }
 
+.button-container .wish-list {
+    padding: 14px 14px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+}
+.button-container .add-to-cart-button {
+    padding: 14px 14px;
+    background-color: #ff3e6c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+}
 .add-to-cart-button:hover {
-    background-color: #0056b3;
+    background-color: #ff3ea5;
+}
+.swiper-pagination-bullet-active {
+    background-color: #ff3e6c !important;
+    width: 20px !important;
+    border-radius: 4px !important;
+}
+@media all and (max-width: 781px) {
+    .product-details-page .product-images {
+        width: 100%;
+    }
+    .button-container .wish-list {
+        width: 50%;
+    }
+    .button-container .add-to-cart-button {
+        width: 50%;
+    }
+    .button-container {
+        position: fixed;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+        z-index: 11;
+        background-color: #fff;
+        width: 100%;
+        bottom: 58px;
+        left: 0;
+    }
 }

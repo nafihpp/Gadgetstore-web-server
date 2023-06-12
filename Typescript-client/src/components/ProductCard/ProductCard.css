@@ -1,13 +1,7 @@
 .card-container-product {
     position: relative;
 }
-.card-container-product .favorite {
-    position: absolute;
-    bottom: -2px;
-    right: 10px;
-    cursor: pointer;
-}
-.card {
+.card-container-product .card {
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -19,6 +13,25 @@
     background: #fff;
     width: 168px;
     position: relative;
+}
+@media all and (max-width: 788px) {
+    .card-container-product .card {
+        width: 155px;
+        margin-right: 10px;
+    }
+}
+
+@media all and (max-width: 751px) {
+    .card-container-product .card {
+        width: 150px;
+        margin-right: 15px;
+    }
+}
+.card-container-product .favorite {
+    position: absolute;
+    bottom: 2px;
+    right: 16px;
+    cursor: pointer;
 }
 .card .trending-text-container {
     position: absolute;
@@ -78,7 +91,10 @@
     margin-right: 7px;
 }
 .card .discount-percentage {
-    color: #38ae04;
+    padding: 3px;
+    background: antiquewhite;
+    color: #9c27b0;
     font-weight: bold;
     text-transform: uppercase;
+    border-radius: 2px;
 }

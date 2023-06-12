@@ -1,3 +1,7 @@
+header {
+    height: 90px;
+    display: flex;
+}
 .header-container {
     box-shadow: 0 6px 7px 0 hsla(0, 0%, 76.9%, 0.16);
     width: 100%;
@@ -45,6 +49,7 @@
 }
 .header-container .right-container {
     display: flex;
+    align-items: center;
 }
 .header-container .right-container button {
     background: none;
@@ -68,6 +73,7 @@
     background: none;
     border: none;
     cursor: pointer;
+    margin: 10px;
 }
 @media all and (max-width: 781px) {
     .header-container .hamburger {
@@ -84,6 +90,9 @@
     }
     .header-container .right-container .profile-container {
         display: none;
+    }
+    .header-container .middle-container {
+        width: 90%;
     }
 }
 .middle-link {

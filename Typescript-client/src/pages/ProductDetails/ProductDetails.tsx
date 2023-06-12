@@ -6,15 +6,13 @@ import { gadgetProduct } from '../../models/models'
 import { useParams } from 'react-router-dom'
 import { LoadingScreen } from '../LoadingScreen'
 // import Swiper core and required modules
-import { Pagination } from 'swiper';
-
+import SwiperCore, { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import { Rating } from '@mui/material'
+
+SwiperCore.use([Autoplay]);
 
 export const ProductDetails = () => {
     const { id } = useParams();
@@ -37,32 +35,36 @@ export const ProductDetails = () => {
         <div className="product-details-page">
             <div className="product-images">
                 <Swiper
-                    className="product-details-swiper"
                     modules={[Pagination]}
-                    spaceBetween={0}
                     slidesPerView={1}
                     pagination={{ clickable: true }}
+                    loop={true}
+                    autoplay={{
+                        delay: 2000,
+                        disableOnInteraction: false,
+                    }}
 
                 >
                     {currentProduct?.images.map((image, index) => (
-                        <SwiperSlide key={index}>
-                            <img src={image} alt={`Product Image ${index + 1}`} />
+                        <SwiperSlide key={index} >
+                            <img src={image} alt={`Product Image ${index + 1}`} width="100%" height="100%" style={{ objectFit: "contain" }} />
                         </SwiperSlide>
                     ))}
                 </Swiper>
             </div>
             <div className="product-details">
-                <h2 className="product-title">{currentProduct?.title}</h2>
-                <p className="product-brand">{currentProduct?.brand}</p>
-                <p className="product-description">{currentProduct?.description}</p>
-                <p className="product-price">
-                    Price: ${1000} {100 > 0 && <span className="discount">(-10%)</span>}
-                </p>
-                <p className="product-rating">{currentProduct?.rating}</p>
-                <p className="product-stock">{currentProduct?.stock === 0 ? "Item Not in Stock" : "In Stock"}</p>
-                <div className='button-container'>
-                    <button className="buy-now-button">Buy Now</button>
-                    <button className="add-to-cart-button">Add to Cart</button>
+                <div className="wrapper">
+                    <h2 className="product-title">{currentProduct?.title}</h2>
+                    <p className="product-description">{currentProduct?.description}</p>
+                    <p className="product-price">
+                        <strong className='price'>AED {currentProduct?.price}</strong> {currentProduct?.price !== 0 && <span className="discount">({currentProduct?.discountPercentage}% OFF)</span>}
+                    </p>
+                    <Rating name="read-only" value={currentProduct?.rating} readOnly />
+                    <p className="product-stock">{currentProduct?.stock === 0 ? "Item Not in Stock" : "In Stock"}</p>
+                    <div className='button-container'>
+                        <button className="add-to-cart-button">Add to Cart</button>
+                        <button className="wish-list">Wishlist</button>
+                    </div>
                 </div>
             </div>
         </div>
