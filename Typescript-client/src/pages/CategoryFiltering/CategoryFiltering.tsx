@@ -1,11 +1,12 @@
 import './CategoryFiltering.css';
-import products from "../../dummy.json"
 import { ProductCard } from '../../components/ProductCard';
 import { FilterSideBar } from '../../components/FilterSideBar';
 import React from 'react';
+import { ProductContext } from '../../context/ProductContext/ProductContext';
 
 export const CategoryFiltering = () => {
     const [isModal, setModal] = React.useState<boolean>(false);
+    const { products } = React.useContext(ProductContext);
     const toggleModal = () => {
         setModal(!isModal);
     }
