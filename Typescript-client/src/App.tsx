@@ -9,7 +9,7 @@ import { ProductDetails } from './pages/ProductDetails';
 import { LoginPage } from './pages/LoginPage';
 import { SingupPage } from './pages/SignupPage';
 import { ForgotPassword } from './pages/ForgotPassword';
-import { NotFound404 } from './pages/NotFound404';
+import { ErrorLayout } from './components/ErrorLayout';
 import { Favourites } from './pages/Favorites';
 import { ProtectedRoutes } from './components/Routes/ProtectedRoutes';
 import { ProtectedAfterLogin } from './components/Routes/ProtectedAfterLogin';
@@ -25,7 +25,7 @@ function App() {
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/category" element={<CategoryFiltering />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="*" element={<NotFound404 />} />
+        <Route path="*" element={<ErrorLayout message="Page Not Found" />} />
         <Route element={<ProtectedRoutes />}>
           <Route path="/favorites" element={<Favourites />} />
           <Route path="/profile" element={<Profile />} />
