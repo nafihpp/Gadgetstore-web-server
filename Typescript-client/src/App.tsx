@@ -6,7 +6,6 @@ import { HomePage } from './pages/HomePage/HomePage';
 import { Route, Routes } from 'react-router-dom'
 import { Cart } from './pages/Cart/Cart';
 import { ProductDetails } from './pages/ProductDetails';
-import { Footer } from './components/Footer';
 import { LoginPage } from './pages/LoginPage';
 import { SingupPage } from './pages/SignupPage';
 import { ForgotPassword } from './pages/ForgotPassword';
@@ -38,7 +37,7 @@ function App() {
           <Route path='/forgot-password' element={<ForgotPassword />} />
         </Route>
       </Routes>
-      <Footer />
+
       <div className='bottom-navigation-container'>
         <BottomNavigationBar />
       </div>

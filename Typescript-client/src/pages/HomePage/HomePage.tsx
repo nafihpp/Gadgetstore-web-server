@@ -4,6 +4,7 @@ import { TrendingProducts } from '../../components/TrendingProducts'
 import { Partners } from "../../components/Partners/Partners"
 import { ProductContext } from "../../context/ProductContext/ProductContext"
 import { LoadingScreen } from "../LoadingScreen"
+import { Footer } from "../../components/Footer"
 
 export const HomePage = () => {
     const { productLoading } = React.useContext(ProductContext);
@@ -15,6 +16,7 @@ export const HomePage = () => {
             <CategoriesBar />
             <TrendingProducts />
             <Partners />
+            <Footer />
         </React.Fragment>
     )
 }
