@@ -7,6 +7,7 @@ interface CurrentProduct {
 }
 
 export const ProductCard = ({ product }: CurrentProduct) => {
+
     const navigate = useNavigate();
 
     const discountedRate = (prouctPrice: number, discountPercentage: number) => {
@@ -17,6 +18,8 @@ export const ProductCard = ({ product }: CurrentProduct) => {
     const handleDetailsPage = (productId: string | number) => {
         navigate(`/products/${productId}`)
     }
+
+
     return (
         <div className="card-container-product">
             <div className="card" onClick={() => handleDetailsPage(product?.id)}>

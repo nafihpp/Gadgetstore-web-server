@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 import { children } from "../../models/models";
 
 interface CartItemProps {
-    id: number;
+    id: number | number;
     title: string;
     price: number;
     quantity: number;

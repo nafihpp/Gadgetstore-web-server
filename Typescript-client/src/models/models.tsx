@@ -26,4 +26,10 @@ export interface gadgetProduct {
     thumbnail: string;
     title: string;
 }
-
+export interface CartItemProps {
+    id: string | number;
+    title: string;
+    price: number;
+    quantity: number;
+    thumbnail: string;
+}

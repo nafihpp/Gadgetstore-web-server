@@ -1,4 +1,4 @@
-import { gadgetProduct } from "../../models/models";
+import { CartItemProps } from "../../models/models";
 
 export enum ACTIONS {
     INCREMENT = "INCREMENT",
@@ -9,18 +9,18 @@ export enum ACTIONS {
 
 export interface AddItemAction {
     type: ACTIONS.ADD_TO_CART;
-    payload: gadgetProduct;
+    payload: CartItemProps;
 }
 
 export interface RemoveItemAction {
     type: ACTIONS.REMOVE_FROM_CART;
-    payload: string;
+    payload: string | number;
 }
 export interface IncrementItemAction {
     type: ACTIONS.INCREMENT;
-    payload: string;
+    payload: string | number;
 }
 export interface DecrementItemAction {
     type: ACTIONS.DECREMENT;
-    payload: string;
+    payload: string | number;
 }

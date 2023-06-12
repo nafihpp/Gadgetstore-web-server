@@ -3,13 +3,11 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { CartContext } from '../../context/CartContext/CartContext';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Badge from '@mui/material/Badge/Badge';
 import { BottomNavigationContext } from "../../context/BottomNavigationContext/BottomNavigationContext";
 
 export const BottomNavigationBar = () => {
-    const location = useLocation();
-    console.log(location.pathname, '--location');
     const { cart } = useContext(CartContext);
     const navigate = useNavigate();
     const { navigationValue, setNavigationValue } = React.useContext(BottomNavigationContext);
