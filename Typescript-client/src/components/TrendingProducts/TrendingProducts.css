@@ -18,6 +18,7 @@
     justify-self: center;
     cursor: pointer;
     padding: 5px;
+    border: 2px solid;
 }
 .swiper-navigation-next {
     display: flex;
@@ -33,6 +34,7 @@
     display: flex;
     align-items: center;
     justify-self: center;
+    border: 2px solid;
 }
 /* responsive */
 .swiper-container {
