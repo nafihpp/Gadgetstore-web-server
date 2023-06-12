@@ -6,6 +6,7 @@ type CartAction = AddItemAction | RemoveItemAction | IncrementItemAction | Decre
 
 export const CartReducer = (state: any, action: CartAction) => {
     const { setCart } = React.useContext(CartContext);
+    console.log(setCart);
     console.log(state, '==curentstate')
     const { type, payload } = action;
     switch (type) {
