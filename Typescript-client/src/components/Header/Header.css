@@ -88,9 +88,7 @@ header {
     .search-icon-toggle {
         display: block;
     }
-    .header-container .right-container .profile-container {
-        display: none;
-    }
+
     .header-container .middle-container {
         width: 90%;
     }
