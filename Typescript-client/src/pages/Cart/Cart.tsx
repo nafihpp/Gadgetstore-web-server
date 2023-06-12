@@ -10,7 +10,12 @@ export const Cart = () => {
     const handleCouponCodeChange = (e: any) => {
         setCouponCode(e?.target?.value);
     };
-    console.log('okkk')
+    const totalAmount = () => {
+        const total = cart?.reduce((acc: number, item: any): number => {
+            return acc = item?.price * item?.quantity;
+        }, 0)
+        return total;
+    }
     return (
         <div className="cart-page">
             <h1 className="cart-title">Cart</h1>
@@ -40,9 +45,9 @@ export const Cart = () => {
                 </button>
             </div>}
             {isCartLength && <div className="cart-total">
-                <h2 className="total-text">Sub Total: ${100}</h2>
-                <h2 className="total-text">Coupon Discount: ${100}</h2>
-                <h2 className="total-text">Total: ${100}</h2>
+                <h2 className="total-text">Sub Total: AED {totalAmount()}</h2>
+                <h2 className="total-text">Coupon Discount: AED {100}</h2>
+                <h2 className="total-text">Total: AED {100}</h2>
             </div>}
             {isCartLength && <button className="checkout-button">Checkout</button>}
         </div>

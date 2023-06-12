@@ -24,9 +24,9 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/category" element={<CategoryFiltering />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<NotFound404 />} />
         <Route element={<ProtectedRoutes />}>
-          <Route path="/cart" element={<Cart />} />
           <Route path="/favorites" element={<Favourites />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/orders" element={<Profile />} />
