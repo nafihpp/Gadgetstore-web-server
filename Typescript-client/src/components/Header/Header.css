@@ -68,15 +68,20 @@ header {
 }
 .search-icon-toggle {
     display: none;
+    color: #000;
 }
 .back-button {
     background: none;
     border: none;
     cursor: pointer;
     margin: 10px;
+    color: #000;
 }
 .hamburger-container {
     display: none;
+}
+.cart-container {
+    color: #000;
 }
 @media all and (max-width: 781px) {
     .header-container .hamburger {
@@ -86,6 +91,7 @@ header {
         display: block;
     }
     .search-icon-toggle {
+        color: #000;
         display: block;
     }
     .header-container .middle-container {

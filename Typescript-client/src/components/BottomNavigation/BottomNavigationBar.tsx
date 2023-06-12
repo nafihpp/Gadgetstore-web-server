@@ -8,8 +8,6 @@ import Badge from '@mui/material/Badge/Badge';
 import { BottomNavigationContext } from "../../context/BottomNavigationContext/BottomNavigationContext";
 
 export const BottomNavigationBar = () => {
-
-
     const { cart } = useContext(CartContext);
     const navigate = useNavigate();
     const { navigationValue, setNavigationValue } = React.useContext(BottomNavigationContext);
