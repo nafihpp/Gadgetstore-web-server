@@ -7,7 +7,7 @@ export const Cart = () => {
     const { cart } = React.useContext(CartContext);
     let isCartLength = cart?.length !== 0;
     const [couponCode, setCouponCode] = React.useState('');
-    const handleCouponCodeChange = (e: React.SyntheticEvent) => {
+    const handleCouponCodeChange = (e: any) => {
         setCouponCode(e?.target?.value);
     };
     return (
