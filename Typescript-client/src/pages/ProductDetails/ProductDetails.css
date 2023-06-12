@@ -23,7 +23,6 @@
     color: #282c3f;
     align-items: center;
     width: 98px;
-    margin: 10px auto;
     justify-content: center;
     border-radius: 4px;
     margin-top: 10px;
@@ -108,6 +107,9 @@
     border-radius: 4px !important;
 }
 @media all and (max-width: 781px) {
+    .product-details .product-quantity {
+        margin: 10px auto;
+    }
     .product-details-page .product-images {
         width: 100%;
     }
