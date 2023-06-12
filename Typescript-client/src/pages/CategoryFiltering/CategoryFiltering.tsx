@@ -1,8 +1,8 @@
 import './CategoryFiltering.css';
-import { ProductCard } from '../../components/ProductCard';
 import { FilterSideBar } from '../../components/FilterSideBar';
 import React from 'react';
 import { ProductContext } from '../../context/ProductContext/ProductContext';
+import { FilterCard } from '../../components/FilterCard';
 
 export const CategoryFiltering = () => {
     const [isModal, setModal] = React.useState<boolean>(false);
@@ -22,7 +22,7 @@ export const CategoryFiltering = () => {
                 </div>
                 <div className="products-filter">
                     {products !== undefined && products?.map((product) => {
-                        return <ProductCard product={product} key={product.id} />
+                        return <FilterCard product={product} key={product.id} />
                     })}
                 </div>
             </div>}

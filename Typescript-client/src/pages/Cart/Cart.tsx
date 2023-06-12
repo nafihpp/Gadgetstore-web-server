@@ -6,11 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 export const Cart = () => {
     const { cart } = React.useContext(CartContext);
     let isCartLength = cart?.length !== 0;
-    // State for coupon code
     const [couponCode, setCouponCode] = React.useState('');
-
-    // Handler for coupon code input change
-    const handleCouponCodeChange = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+    const handleCouponCodeChange = (e: React.SyntheticEvent) => {
         setCouponCode(e?.target?.value);
     };
     return (
@@ -40,7 +37,7 @@ export const Cart = () => {
                     onChange={handleCouponCodeChange}
                     className="coupon-input"
                 />
-                <button className="coupon-button" >
+                <button className="coupon-button" onClick={handleCouponCodeChange} >
                     Apply Coupon
                 </button>
             </div>}

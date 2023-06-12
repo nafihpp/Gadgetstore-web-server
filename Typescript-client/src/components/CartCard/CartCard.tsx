@@ -12,7 +12,7 @@ interface currentItem {
 }
 
 export const CartCard = ({ cartproduct }: currentItem) => {
-    const [count, setCount] = React.useState<number>(1);
+    const [count, setCount] = React.useState<number>(cartproduct?.quantity);
     const increment = () => {
         setCount((count) => count + 1);
     }

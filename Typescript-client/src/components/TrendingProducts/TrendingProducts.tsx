@@ -51,8 +51,6 @@ export const TrendingProducts = () => {
                         </button>
                     </div>
                     <Swiper
-                        spaceBetween={20}
-                        slidesPerView={6}
                         loop={true}
                         ref={swiperRef}
                         breakpoints={{
@@ -61,10 +59,15 @@ export const TrendingProducts = () => {
                                 spaceBetween: 10,
                                 slidesPerView: 1,
                             },
-                            300: {
-                                width: 300,
-                                slidesPerView: 2,
-                                spaceBetween: 20
+                            380: {
+                                width: 200,
+                                spaceBetween: 10,
+                                slidesPerView: 1,
+                            },
+                            400: {
+                                width: 480,
+                                spaceBetween: 10,
+                                slidesPerView: 3,
                             },
                             480: {
                                 width: 480,

@@ -1,7 +1,7 @@
-.card-container-product {
+.filter-card-container-product {
     position: relative;
 }
-.card-container-product .card {
+.filter-card-container-product .filter-card {
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -11,10 +11,17 @@
     max-height: 170px;
     min-height: 226px;
     background: #fff;
+    width: 200px;
     position: relative;
 }
 
-.card-container-product .favorite {
+@media all and (max-width: 681px) {
+    .filter-card-container-product .filter-card {
+        width: 168px;
+    }
+}
+
+.filter-card-container-product .filter-favorite {
     position: absolute;
     bottom: 2px;
     right: 16px;
