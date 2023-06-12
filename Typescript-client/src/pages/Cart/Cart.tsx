@@ -12,6 +12,7 @@ export const Cart = () => {
     };
     const totalAmount = () => {
         const total = cart?.reduce((acc: number, item: any): number => {
+            console.log(acc)
             return acc = item?.price * item?.quantity;
         }, 0)
         return total;
