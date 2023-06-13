@@ -1,29 +1,38 @@
 import { Link } from "react-router-dom";
+import React from "react";
 import "./LoginPage.css";
+import axios from "axios";
+import { AuthContext } from "../../context/AuthContext/AuthContext";
 
 export const LoginPage = () => {
-    // React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
     // const navigate = useNavigate();
-    // const { auth, setAuth } = useContext(AuthContext);
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
+    const { setAuth } = React.useContext(AuthContext);
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
 
-    const handleEmail = () => {
-        // setEmail(e?.target?.value);
+    const handleEmail = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+        setEmail(e?.target?.value);
     };
-    const handlePassword = () => {
-        // setPassword(e?.target?.value);
+    const handlePassword = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+        setPassword(e?.target?.value);
     };
 
-    const handleSubmit = () => {
-        // e.preventDefault();
-        // if (email === "test" && password === "test") {
-        //     localStorage.setItem("movie-token", "tokenauthsuccess");
-        //     setAuth(true);
-        //     navigate("/");
-        // } else {
-        //     alert("wrong credentials");
-        // }
+    const handleSubmit = (e: any): void => {
+        e.preventDefault();
+        axios("https://fakestoreapi.com/auth/login", {
+            method: 'POST',
+            data: {
+                username: "mor_2314",
+                password: "83r5^_"
+            },
+        }).then((response) => {
+            if (response.data.token) {
+                localStorage.setItem("token", response.data.token);
+                (setAuth as any)(true);
+            }
+        }).catch((error) => {
+            console.log(error);
+        })
     };
     return (
 
@@ -48,7 +57,7 @@ export const LoginPage = () => {
                     </form>
                 </div>
                 <p className="bottom-link">
-                    New Here?{" "}
+                    New Here?
                     <Link to="/signup">Sign up now.</Link>
                 </p>
             </div>

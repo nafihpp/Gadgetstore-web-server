@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import './ProductDetails.css'
-import axios from 'axios'
 import React from 'react'
 import { CartItemProps, gadgetProduct } from '../../models/models'
 import { useParams } from 'react-router-dom'
@@ -14,30 +13,45 @@ import { CartContext } from '../../context/CartContext/CartContext'
 import { CartReducer } from '../../context/CartContext/CartReducer'
 import { ACTIONS } from '../../context/CartContext/ACTIONS'
 import { toast } from 'react-toastify'
+import { axiosInstance } from '../../utils/interceptor'
 
 SwiperCore.use([Autoplay]);
 
 export const ProductDetails = () => {
     const { id } = useParams();
+    const abortController = React.useRef(new AbortController());
+    console.log(abortController.current, '==this is abort controller')
     const { cart } = React.useContext(CartContext);
     const [currentProduct, setCurrentProduct] = React.useState<gadgetProduct>()
     const [loading, setLoading] = React.useState(true);
     const [state, dispatch] = React.useReducer(CartReducer, { currentState: cart });
     const [count, setCount] = React.useState<number>(1);
-    const BASE_URL = import.meta.env.VITE_BASE_URL;
 
     console.log(state, '==statenow');
 
     useEffect(() => {
-        axios(`${BASE_URL}/product/${id}`, {
+        fetchCurrentProduct();
+        return () => {
+            abortController.current.abort();
+        }
+    }, []);
+
+    const fetchCurrentProduct = () => {
+        axiosInstance(`/product/${id}`, {
             method: "GET",
+            signal: abortController.current.signal
         }).then((response) => {
             setCurrentProduct(response.data);
+        }).catch((error) => {
+            console.log(error);
         }).finally(() => {
-            setLoading(false)
+            setLoading(false);
         })
-    }, [])
+    }
 
+    if (loading) {
+        return <LoadingScreen />
+    }
     const handleAddCart = (product: any) => {
         let cartProduct = {
             id: product?.id,
@@ -47,7 +61,7 @@ export const ProductDetails = () => {
             quantity: count,
 
         } as CartItemProps;
-        const isExist = cart?.find((item) => item.id === product.id)
+        const isExist = cart?.find((item) => item?.id === product?.id)
         if (!isExist) {
             dispatch({ type: ACTIONS.ADD_TO_CART, payload: cartProduct })
         }
@@ -65,9 +79,6 @@ export const ProductDetails = () => {
         }
     }
 
-    if (loading) {
-        return <LoadingScreen />
-    }
     return (
         <div className="product-details-page">
             <div className="product-images">

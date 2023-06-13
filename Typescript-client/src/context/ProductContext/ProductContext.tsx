@@ -1,6 +1,6 @@
-import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { children, gadgetProduct } from "../../models/models";
+import { axiosInstance } from "../../utils/interceptor";
 
 export interface IproductContext {
     products: gadgetProduct[];
@@ -12,7 +12,6 @@ export interface IproductContext {
 export const ProductContext = createContext<Partial<IproductContext>>({});
 
 export const ProductProvider = ({ children }: children) => {
-    const BASE_URL = import.meta.env.VITE_BASE_URL;
     const [products, setProducts] = useState<gadgetProduct[]>([]);
     const [productLoading, setProductLoading] = useState(true);
 
@@ -21,11 +20,11 @@ export const ProductProvider = ({ children }: children) => {
     }, []);
 
     const fetchProducts = () => {
-        axios
-            .get(`${BASE_URL}/all-products`)
+        axiosInstance(`/all-products`, {
+            method: "GET"
+        })
             .then((response) => {
                 setProducts(response?.data);
-                setProductLoading(false);
             })
             .catch((err: Error) => {
                 console.log(err)

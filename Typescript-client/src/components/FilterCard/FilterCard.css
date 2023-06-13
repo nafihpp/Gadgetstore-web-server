@@ -1,6 +1,17 @@
 .filter-card-container-product {
     position: relative;
 }
+
+.filter-card-container-product .filter-card-title {
+    font-weight: bold;
+    margin-top: 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 90%;
+    text-align: center;
+    white-space: nowrap;
+}
+
 .filter-card-container-product .filter-card {
     border-radius: 4px;
     display: flex;
@@ -15,80 +26,31 @@
     position: relative;
 }
 
-@media all and (max-width: 681px) {
-    .filter-card-container-product .filter-card {
-        width: 168px;
-    }
-}
-
 .filter-card-container-product .filter-favorite {
     position: absolute;
     bottom: 2px;
     right: 16px;
     cursor: pointer;
 }
-.card .trending-text-container {
-    position: absolute;
-    left: 0px;
-    border-radius: 2px;
-    top: 0px;
-    background: #ffd800;
-    padding: 3px;
-}
-.card .trending-text-container .trending-text {
-    color: #fff;
-}
-.card .card-title {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 90%;
-    text-align: center;
-    font-size: 20px;
-    margin: 10px auto;
-    font-weight: 700;
-}
-.card .cart-button {
-    border: none;
-    background: #000;
-    color: #fff;
-    padding: 10px;
-    margin: 10px 0;
-    cursor: pointer;
-    border-radius: 4px;
-}
-.card .quantity {
-    display: flex;
-    background: black;
-    align-items: center;
-    color: #fff;
-    width: 72px;
-    justify-content: center;
-    border-radius: 4px;
-}
 
-.card .decrease {
-    font-size: 30px;
-    cursor: pointer;
-    margin-right: 10px;
+.filter-card-container-product .filter-card-price-container {
+    margin: 10px 0 10px 0;
 }
-.card .increase {
-    font-size: 30px;
-    cursor: pointer;
-    margin-left: 10px;
-}
-.card .price-container {
-    margin-bottom: 9px;
-}
-.card .old-price {
+.filter-card-discount-container .old-price {
     text-decoration: line-through;
     margin-right: 7px;
 }
-.card .discount-percentage {
+.filter-card-discount-container .discount-percentage {
     padding: 3px;
     background: antiquewhite;
     color: #9c27b0;
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 2px;
+}
+
+@media all and (max-width: 681px) {
+    .filter-card-container-product .filter-card {
+        width: 168px;
+    }
 }

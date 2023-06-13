@@ -25,7 +25,7 @@ function App() {
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/category" element={<CategoryFiltering />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="*" element={<ErrorLayout message="Page Not Found" />} />
+        <Route path="*" element={<ErrorLayout message="404 Page Not Found" />} />
         <Route element={<ProtectedRoutes />}>
           <Route path="/favorites" element={<Favourites />} />
           <Route path="/profile" element={<Profile />} />
@@ -37,7 +37,6 @@ function App() {
           <Route path='/forgot-password' element={<ForgotPassword />} />
         </Route>
       </Routes>
-
       <div className='bottom-navigation-container'>
         <BottomNavigationBar />
       </div>
