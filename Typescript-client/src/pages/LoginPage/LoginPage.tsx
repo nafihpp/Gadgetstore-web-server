@@ -9,6 +9,7 @@ export const LoginPage = () => {
     const { setAuth } = React.useContext(AuthContext);
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
+    console.log(email, password)
 
     const handleEmail = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
         setEmail(e?.target?.value);
