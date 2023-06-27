@@ -32,6 +32,7 @@ export const Header = () => {
         setSearchQuery(e?.target?.value)
     }
     React.useEffect(() => {
+        setScreenWidth(window.innerWidth);
         const handleResize = () => {
             setScreenWidth(window.innerWidth);
         };
@@ -40,6 +41,14 @@ export const Header = () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+    const searchBarHandle = () => {
+        if (isSearchBar) {
+            return true;
+        }
+        else if (screenWidth > 781) {
+            return true
+        }
+    }
     return (
         <header className="header-container">
             <div className="wrapper">
@@ -63,7 +72,7 @@ export const Header = () => {
                             style={{ objectFit: "contain" }}
                         />
                     </Link>}
-                {isSearchBar && <div className="middle-container">
+                {searchBarHandle() && <div className="middle-container">
                     <input placeholder="search here" onChange={searchHandle} value={searchQuery} />
                     <div className="search-icon-container">
                         {!searchQuery ? (

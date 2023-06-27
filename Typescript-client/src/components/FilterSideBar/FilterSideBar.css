@@ -6,6 +6,14 @@
     width: 260px;
     height: 100vh;
 }
+.wrapper-filter {
+    width: 98%;
+    margin: 0 auto;
+}
+.slider-container {
+    display: flex;
+    justify-content: space-between;
+}
 @media all and (max-width: 781px) {
     .bottom-filter-container {
         position: fixed;

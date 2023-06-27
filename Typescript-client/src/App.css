@@ -12,6 +12,9 @@
     font-size: 30px;
     color: #ffd800;
 }
+.bottom-navigation-container {
+    display: none;
+}
 @media screen and (min-width: 640px) {
     .swiper-container {
         width: 640px;

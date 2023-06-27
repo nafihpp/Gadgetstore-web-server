@@ -29,7 +29,7 @@ export const TrendingProducts = () => {
     return (
         <div className='trending-card-container'>
             <div className="wrapper">
-                <h1 ref={HeadingRef} className='heading-products'>Trending Products</h1>
+                <h1 ref={HeadingRef} className='heading-products'>Latest smart phones</h1>
                 <div className='trending-card-container'>
                     <div className="swiper-navigation-prev">
                         <button className="swiper-prev" onClick={goPrev}>

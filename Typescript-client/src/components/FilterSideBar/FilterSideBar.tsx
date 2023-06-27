@@ -40,73 +40,79 @@ export const FilterSideBar = ({ isModal, setModal }: ModalInterface) => {
     };
     return (
         <div className="filters" style={{ width: isModal ? "100%" : "260px" }}>
-            <h2>Filters</h2>
-            <div className="filter-group">
-                <h3>Price Range</h3>
-                <Slider
-                    getAriaLabel={() => 'Minimum distance shift'}
-                    value={value}
-                    onChange={handleChange}
-                    valueLabelDisplay="auto"
-                    getAriaValueText={valuetext}
-                    disableSwap
-                />
-            </div>
-            <div className="filter-group">
-                <h3>Brands</h3>
-                <div className="brand-checkboxes">
-                    <label>
-                        <input type="checkbox" />
-                        Apple
-                    </label>
-                    <label>
-                        <input type="checkbox" />
-                        Mi
-                    </label>
-                    <label>
-                        <input type="checkbox" />
-                        Vivo
-                    </label>
+            <div className='wrapper-filter'>
+                <h2>Filters</h2>
+                <div className="filter-group">
+                    <h3>Price Range</h3>
+                    <Slider
+                        getAriaLabel={() => 'Minimum distance shift'}
+                        value={value}
+                        onChange={handleChange}
+                        valueLabelDisplay="auto"
+                        getAriaValueText={valuetext}
+                        disableSwap
+                    />
+                    <div className='slider-container'>
+                        <div className='left-value'>{value[0]}</div>
+                        <div className='right-value'>{value[1]}</div>
+                    </div>
                 </div>
-            </div>
-            <div className="filter-group">
-                <h3>Category</h3>
-                <select className="category-select">
-                    <option value="phones">Phones</option>
-                    <option value="laptops">Laptops</option>
-                    <option value="headphones">Headphones</option>
-                </select>
-            </div>
-            <div className="filter-group">
-                <h3>Rating</h3>
-                <div className="rating-checkboxes">
-                    <label>
-                        <input type="checkbox" />
-                        <span>&#9733;</span>
-                        <span>&#9733;</span>
-                        <span>&#9733;</span>
-                        <span>&#9733;</span>
-                        <span>&#9733;</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" />
-                        <span>&#9733;</span>
-                        <span>&#9733;</span>
-                        <span>&#9733;</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" />
-                        <span>&#9733;</span>
-                    </label>
+                <div className="filter-group">
+                    <h3>Brands</h3>
+                    <div className="brand-checkboxes">
+                        <label>
+                            <input type="checkbox" />
+                            Apple
+                        </label>
+                        <label>
+                            <input type="checkbox" />
+                            Mi
+                        </label>
+                        <label>
+                            <input type="checkbox" />
+                            Vivo
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <div className='bottom-filter-container'>
-                {isModal && <button className='close-button' onClick={handleClose}>
-                    Close
-                </button>}
-                <button className='apply-button' style={{ width: isModal ? "50%" : "100%" }}>
-                    Apply now
-                </button>
+                <div className="filter-group">
+                    <h3>Category</h3>
+                    <select className="category-select">
+                        <option value="phones">Phones</option>
+                        <option value="laptops">Laptops</option>
+                        <option value="headphones">Headphones</option>
+                    </select>
+                </div>
+                <div className="filter-group">
+                    <h3>Rating</h3>
+                    <div className="rating-checkboxes">
+                        <label>
+                            <input type="checkbox" />
+                            <span>&#9733;</span>
+                            <span>&#9733;</span>
+                            <span>&#9733;</span>
+                            <span>&#9733;</span>
+                            <span>&#9733;</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" />
+                            <span>&#9733;</span>
+                            <span>&#9733;</span>
+                            <span>&#9733;</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" />
+                            <span>&#9733;</span>
+                        </label>
+                    </div>
+                </div>
+                <div className='bottom-filter-container'>
+                    {isModal && <button className='close-button' onClick={handleClose}>
+                        Close
+                    </button>}
+                    <button className='apply-button' style={{ width: isModal ? "50%" : "100%" }}>
+                        Apply now
+                    </button>
+                </div>
             </div>
         </div >
     )
