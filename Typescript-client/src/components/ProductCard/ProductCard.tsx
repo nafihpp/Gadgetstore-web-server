@@ -19,7 +19,6 @@ export const ProductCard = ({ product }: CurrentProduct) => {
         navigate(`/products/${productId}`)
     }
 
-
     return (
         <div className="card-container-product">
             <div className="card" onClick={() => handleDetailsPage(product?.id)}>

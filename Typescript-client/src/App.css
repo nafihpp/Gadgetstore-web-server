@@ -5,6 +5,14 @@
     width: 90%;
     margin: 0 auto;
 }
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000000;
+    background-color: #fff;
+}
 .heading-products {
     text-align: end;
     border-bottom: 3px solid #fbee4f;

@@ -16,8 +16,6 @@ export const BottomNavigationBar = () => {
         (setNavigationValue as React.Dispatch<React.SetStateAction<string>>)(newValue);
         console.log(event, '==event current')
     };
-
-
     React.useEffect(() => {
         if (navigationValue === "home") {
             navigate("/")

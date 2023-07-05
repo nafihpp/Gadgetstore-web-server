@@ -6,6 +6,7 @@ import "./TrendingProducts.css"
 import "swiper/css";
 import "swiper/swiper-bundle.css";
 import { ProductContext } from '../../context/ProductContext/ProductContext';
+import { LatestCard } from '../LatestCard';
 
 
 export const TrendingProducts = () => {
@@ -83,7 +84,7 @@ export const TrendingProducts = () => {
                         }}
                     >
                         {products !== undefined && products?.map((product: gadgetProduct) => {
-                            return <SwiperSlide><ProductCard product={product} key={product.id} /></SwiperSlide>
+                            return <SwiperSlide><LatestCard product={product} key={product.id} /></SwiperSlide>
                         })}
                     </Swiper>
                     <div className="swiper-navigation-next">

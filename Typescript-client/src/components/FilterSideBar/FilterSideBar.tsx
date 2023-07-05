@@ -41,22 +41,18 @@ export const FilterSideBar = ({ isModal, setModal }: ModalInterface) => {
     return (
         <div className="filters" style={{ width: isModal ? "100%" : "260px" }}>
             <div className='wrapper-filter'>
-                <h2>Filters</h2>
                 <div className="filter-group">
                     <h3>Price Range</h3>
                     <Slider
                         getAriaLabel={() => 'Minimum distance shift'}
                         value={value}
                         onChange={handleChange}
-                        valueLabelDisplay="auto"
+                        valueLabelDisplay="on"
                         getAriaValueText={valuetext}
                         disableSwap
                     />
-                    <div className='slider-container'>
-                        <div className='left-value'>{value[0]}</div>
-                        <div className='right-value'>{value[1]}</div>
-                    </div>
                 </div>
+                <h1>-------</h1>
                 <div className="filter-group">
                     <h3>Brands</h3>
                     <div className="brand-checkboxes">

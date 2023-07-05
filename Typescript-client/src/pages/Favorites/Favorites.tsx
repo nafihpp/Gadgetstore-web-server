@@ -6,19 +6,17 @@ import { useNavigate } from "react-router-dom";
 export const Favourites = () => {
     const navigate = useNavigate();
     const { favorites } = useContext(FavoriteContext);
-
     if (favorites?.length === 0) {
         return (
             <div className="no-favorites">
                 <p>
-                    No favorites Found!
+                    No Wish Found!
                 </p>
             </div>
         );
     }
-    console.log(favorites, '===favieee')
     const handleDetailsPage = (productId: string | number) => {
-        navigate(`/products/${productId}`)
+        navigate(`/products/${productId}`);
     }
     return (
         <div className="favourite-container">
