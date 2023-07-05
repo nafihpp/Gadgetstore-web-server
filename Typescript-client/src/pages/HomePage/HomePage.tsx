@@ -17,9 +17,12 @@ export const HomePage = () => {
         <React.Fragment>
             <CategoriesBar />
             <TrendingProducts />
-            {products !== undefined && products?.map((product: gadgetProduct) => {
-                return <ProductCard product={product} key={product.id} />
-            })}
+            {/* <LimitedProducts /> */}
+            <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", padding: "10px 0", width: "90%", margin: "0 auto" }}>
+                {products !== undefined && products?.map((product: gadgetProduct) => {
+                    return <ProductCard product={product} key={product.id} />
+                })}
+            </div>
             <Partners />
             <Footer />
         </React.Fragment>

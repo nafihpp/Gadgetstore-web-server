@@ -8,8 +8,6 @@ import { CartReducer } from "../../context/CartContext/CartReducer";
 export const Cart = () => {
     const { cart } = React.useContext(CartContext);
     const [state, dispatch] = React.useReducer(CartReducer, { currentState: cart });
-    console.log(dispatch);
-    console.log(state, '==current State')
     let isCartLength = cart?.length !== 0;
     const [couponCode, setCouponCode] = React.useState('');
     const handleCouponCodeChange = (e: any) => {
