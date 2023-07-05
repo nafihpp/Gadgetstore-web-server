@@ -135,7 +135,6 @@ export const Header = () => {
                             alt="Profile"
                             sx={{ width: 40, height: 40 }}
                         />
-                        <p>{!auth ? "Login/Signup" : ""}</p>
                     </Link>
                     <Link className="cart-container" to="/cart" onClick={() => handleNavigation("cart")}>
                         <Badge badgeContent={cart?.length} color="success" anchorOrigin={{
