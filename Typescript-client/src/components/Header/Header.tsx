@@ -121,8 +121,8 @@ export const Header = () => {
                             viewBox="0 0 24 24"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            height="30"
-                            width="30"
+                            height="25"
+                            width="25"
                             xmlns="http://www.w3.org/2000/svg"
                         >
                             <circle cx="11" cy="11" r="8"></circle>
